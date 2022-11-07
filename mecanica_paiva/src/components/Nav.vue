@@ -1,6 +1,6 @@
 <template>
   <div id="nav" class="container">
-    <nav class="navbar navbar-expand-lg bg-warning fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container">
         <a href="#" class="ms-5"
           ><!--Logo** Colocar a largura do tamanho da imagem sempre -->
@@ -19,24 +19,32 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto me-5">
-            <li class="nav-item">
-              <a class="nav-link active  " aria-current="page" href="#"
-                >Home</a
-              >
+            
+            <li class="nav-item ms-3 pt-3">
+              
+              <a class="nav-link text-white" href="#">
+                <fa
+                  class=" me-2 user btn border border-white bg-white"
+                  :icon="['fas', 'user']"
+                />Atendimento</a>
+              
             </li>
-            <li class="nav-item ms-3">
-              <a class="nav-link " href="#">Atendimento</a>
-            </li>
-            <li class="nav-item ms-3">
-              <a class="nav-link " href="#">Que-somos</a>
-            </li>
-            <li class="nav-item ms-3">
-              <a class="nav-link" href="#">Faça seu orçamento</a>
+            
+            <li class="nav-item ms-3 pt-3">
+              <a class="nav-link text-white" href="#"><fa class="me-2 btn bg-white" :icon="['fas', 'bars']"/>Faça seu orçamento</a>
             </li>
 
-            <li class="nav-item ms-3">
-              <a class="nav-link btn btn-primary" href="#">Entrar</a>
+            <li class="nav-item ms-3 pt-3">
+              <a class="nav-link btn text-white" href="#"><fa class="btn bg-white me-2 " :icon="['fas', 'arrow-right-to-bracket']" /> Login</a>
             </li>
+
+            <nav class="nav-item ms-3 pt-3" >    
+              <a href="" class="nav-link "><fa
+                  class=" bars btn border border-white bg-white"
+                  :icon="['fas', 'bars']"
+                /></a>   
+                
+            </nav>
           </ul>
         </div>
       </div>
@@ -53,14 +61,19 @@ export default {
 
 <style scoped>
 ul li a{
-  color: rgb(5, 5, 5);
+
   font-weight: 900;
 }
-.nav-link:hover {
-  color: rgb(255, 255, 255);
+
+
+
+nav{
+  background: #121D24;
 }
-.nav-link:hover{
-	border-bottom: 1px solid white;
+.bars{
+  position: relative;
+  margin-top: -1px;
+  left: 30px;
 }
 
 
