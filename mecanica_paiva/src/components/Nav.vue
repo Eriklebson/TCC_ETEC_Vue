@@ -4,7 +4,7 @@
       <div class="container">
         <a href="#" class="ms-5"
           ><!--Logo** Colocar a largura do tamanho da imagem sempre -->
-          <img src="../assets/paivablack.png" width="250" />
+          <img src="@/../public/imagem/navbar/logo.png" width="250" />
         </a>
         <button
           class="navbar-toggler"
