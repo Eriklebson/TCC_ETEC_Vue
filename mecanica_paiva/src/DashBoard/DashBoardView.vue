@@ -1,10 +1,10 @@
 <template>
     <Nav />
     <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-3">
             <Menu />
         </div>
-        <div class="col-md-10 itens">
+        <div class="col-md-9 itens">
             <router-view/>
         </div>
     </div>

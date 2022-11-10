@@ -2,6 +2,12 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 import DashBoard from '../DashBoard/DashBoardView.vue';
 import Emails from '../DashBoard/views/EmailView.vue';
+import Servicos from '../DashBoard/views/ServicosView.vue';
+import hisEmail from '../DashBoard/views/HisEmailView.vue';
+import Clientes from '../DashBoard/views/ClientesView.vue';
+import Estatisticas from '../DashBoard/views/EstatisticasView.vue';
+import Gerenciar from '../DashBoard/views/GerenciarView.vue';
+import Configuracoes from '../DashBoard/views/ConfiguracoesView.vue'
 
 const routes = [
   {
@@ -26,6 +32,36 @@ const routes = [
         path: '/DashBoard',
         name: 'Emails',
         component: Emails,
+      },
+      {
+        path: '/Servicos',
+        name: 'Servicos',
+        component: Servicos,
+      },
+      {
+        path: '/hisEmail',
+        name: 'hisEmail',
+        component: hisEmail,
+      },
+      {
+        path: '/Clientes',
+        name: 'Clientes',
+        component: Clientes,
+      },
+      {
+        path: '/Estatisticas',
+        name: 'Estatisticas',
+        component: Estatisticas,
+      },
+      {
+        path: '/Gerenciar',
+        name: 'Gerenciar',
+        component: Gerenciar,
+      },
+      {
+        path: '/Configuracoes',
+        name: 'Configuracoes',
+        component: Configuracoes,
       },
     ]
   }

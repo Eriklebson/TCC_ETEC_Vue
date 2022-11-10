@@ -5,7 +5,7 @@
         <br><br>
         <div class="card">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-4 img">
                             <img src="../../../public/imagem/gmail.png" alt="">
@@ -16,10 +16,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 text-center">
+                <div class="col-md-3 text-center">
                     <button type="button" class="btn principal">principal</button>
                 </div>
-                <div class="col-md-4 text-end">
+                <div class="col-md-3 text-end">
                     <button type="button" class="btn editar"><font-awesome-icon icon="fa-solid fa-pen" /></button>
                 </div>
             </div>
