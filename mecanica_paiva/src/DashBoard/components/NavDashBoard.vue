@@ -22,7 +22,7 @@
               <li class="nav-item ms-3 pt-3">
                 <a class="nav-link text-white" href="#">Bem-Vindo, Erik</a>
               </li>
-              <li class="nav-item ms-3 pt-3">
+              <li class="nav-item ms-3 pt-3 fw-bold">
                 <a class="nav-link text-white" href="#">Ajuda</a>
               </li>
               <li class="nav-item ms-3 pt-3">
