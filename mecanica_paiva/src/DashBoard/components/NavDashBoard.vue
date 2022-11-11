@@ -2,7 +2,7 @@
     <div id="nav" class="container-fluid">
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-          <a href="#" class="ms-5"
+          <a href="/" class="ms-5"
             ><!--Logo** Colocar a largura do tamanho da imagem sempre -->
             <img src="@/../public/imagem/navbar/logo.png" width="250" />
           </a>

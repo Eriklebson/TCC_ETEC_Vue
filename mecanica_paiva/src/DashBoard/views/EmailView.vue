@@ -35,9 +35,6 @@
 </script>
 
 <style scoped>
-*{
-    text-align: start;
-}
 .adicionar{
     color: white;
     background-color: #121D24;

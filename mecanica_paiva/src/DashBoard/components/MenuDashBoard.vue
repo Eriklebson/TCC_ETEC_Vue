@@ -22,6 +22,8 @@
     .menu{
         background-color: #FAFAFA;
         height: 89vh;
+        padding-left: 0px;
+        padding-right: 0px;
     }
     .menu h3{
         padding: 20px;     
@@ -33,7 +35,7 @@
     }
     .menu li{
         padding: 5px 20px;
-        text-align: start;
+        transition: 0.5s;
     }
     .menu li:hover{
         background-color: rgb(112, 112, 112);
