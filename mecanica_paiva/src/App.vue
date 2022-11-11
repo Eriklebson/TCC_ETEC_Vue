@@ -1,8 +1,8 @@
 <template>
   <nav>
-    <Nav/>
-    <Footer/>
-     <router-view/>
+    <Nav v-if="!$route.path.includes('/DashBoard')"/>
+    <router-view/>
+    <Footer v-if="!$route.path.includes('/DashBoard')"/>
   </nav>
  
 </template>
@@ -20,18 +20,6 @@
   }
 </script>
 
-
-
-
 <style>
-<<<<<<< HEAD
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-}
-=======
->>>>>>> 104c57e9a2dc8463fff9dfa6c15211aed6438ec2
 
 </style>

@@ -34,32 +34,32 @@ const routes = [
         component: Emails,
       },
       {
-        path: '/Servicos',
+        path: '/DashBoard/Servicos',
         name: 'Servicos',
         component: Servicos,
       },
       {
-        path: '/hisEmail',
+        path: '/DashBoard/hisEmail',
         name: 'hisEmail',
         component: hisEmail,
       },
       {
-        path: '/Clientes',
+        path: '/DashBoard/Clientes',
         name: 'Clientes',
         component: Clientes,
       },
       {
-        path: '/Estatisticas',
+        path: '/DashBoard/Estatisticas',
         name: 'Estatisticas',
         component: Estatisticas,
       },
       {
-        path: '/Gerenciar',
+        path: '/DashBoard/Gerenciar',
         name: 'Gerenciar',
         component: Gerenciar,
       },
       {
-        path: '/Configuracoes',
+        path: '/DashBoard/Configuracoes',
         name: 'Configuracoes',
         component: Configuracoes,
       },

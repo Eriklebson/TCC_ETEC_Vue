@@ -29,4 +29,8 @@
 .itens{
     padding: 20px;
 }
+.container-fluid{
+    padding-left: 0px;
+    padding-right: 0px;
+}
 </style>

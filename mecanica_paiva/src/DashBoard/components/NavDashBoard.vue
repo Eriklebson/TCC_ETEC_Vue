@@ -19,14 +19,14 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto me-5">
-              <li class="nav-item ms-3 pt-3">
+              <li class="nav-item ms-3 pt-3 text-center">
                 <a class="nav-link text-white" href="#">Bem-Vindo, Erik</a>
               </li>
-              <li class="nav-item ms-3 pt-3 fw-bold">
+              <li class="nav-item ms-3 pt-3 fw-bold text-center">
                 <a class="nav-link text-white" href="#">Ajuda</a>
               </li>
-              <li class="nav-item ms-3 pt-3">
-                <a class="nav-link btn text-white fw-bold" href="#">Sair</a>
+              <li class="nav-item ms-3 pt-3 fw-bold text-center">
+                <a class="nav-link btn text-white" href="#">Sair</a>
               </li>
             </ul>
           </div>
@@ -43,12 +43,12 @@
   
   
 <style scoped>
+nav{
+    background: #121D24;
+}
 .container-fluid{
     padding-left: 0px;
     padding-right: 0px;
-}
-nav{
-    background: #121D24;
 }
   
 /*Small devices (landscape phones, 576px and up)*/
