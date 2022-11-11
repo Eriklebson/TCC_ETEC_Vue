@@ -7,150 +7,20 @@
           <div class="row" id="principal">
             <div class="col-md-6 d-flex">
               <div class="align-self-center text-dark">
-                <h1 class="text-start">Prestando serviços desde 1977.</h1>
-                <p class="text-start">
-                  Há 45 anos, a Paiva é a oficina de confiança da zona sul de
-                  São Paulo. Faça-nos uma visita e venha sentir a diferença,
-                  pois quem conhece, indica!
-                </p>
-
-                <form class="row g-3">
-                  <div class="col-auto">
-                    <input
-                      type="password"
-                      class="form-control"
-                      id="inputPassword2"
-                      placeholder="Seu e-mail"
-                    />
-                  </div>
-
-                  <div class="col-auto">
-                    <button type="submit" class="btn btn-dark mb-3">
-                      Cadastre-se
-                    </button>
-                  </div>
-                </form>
-                <p class="text-start redes">
-                  Nossas redes e contatos:
-                  <fa
-                    class="me-1 whatsapp btn border border-dark"
-                    :icon="['fab', 'whatsapp']"
-                  />
-                  <fa
-                    class="me-1 youtube btn border border-dark"
-                    :icon="['fab', 'youtube']"
-                  />
-                  <fa
-                    class="me-1 instagram btn border border-dark"
-                    :icon="['fab', 'instagram']"
-                  />
-                  <fa
-                    class="me-1 twitter btn border border-dark"
-                    :icon="['fab', 'twitter']"
-                  />
-                  <fa
-                    class="me-1 facebook btn border border-dark"
-                    :icon="['fab', 'facebook']"
-                  />
-                </p>
+                <h1 class="text-start">Prestando serviços desde 1977.</h1>   
               </div>
             </div>
-            <div class="col-md-6 d-none d-md-block">
-              <img src="../assets/mecanico_padrao33.png" alt="" />
+            <div class="col-md-6 d-none d-md-block mt-5">
+              <img src="../../public/imagem/navbar/mecanico.png" style="height:400px; " alt="" />
             </div>
           </div>
         </div>
 
-        <section class="container-fluid section-carousel">
-          <!-- ínicio da seção serviços -->
-          <div>
-            <div
-              id="carouselExampleCaptions"
-              class="carousel slide"
-              data-bs-ride="false"
-            >
-              <div class="carousel-indicators">
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleCaptions"
-                  data-bs-slide-to="0"
-                  class="active"
-                  aria-current="true"
-                  aria-label="Slide 1"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleCaptions"
-                  data-bs-slide-to="1"
-                  aria-label="Slide 2"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#carouselExampleCaptions"
-                  data-bs-slide-to="2"
-                  aria-label="Slide 3"
-                ></button>
-              </div>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="../assets/carrossel_1.png" class="d-block w-100" alt="..." />
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>
-                      Some representative placeholder content for the first
-                      slide.
-                    </p>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <img src="../assets/carrossel_2.png" class="d-block w-100" alt="..." />
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>
-                      Some representative placeholder content for the second
-                      slide.
-                    </p>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <img src="../assets/carrossel_3.png" class="d-block w-100" alt="..." />
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
-                    <p>
-                      Some representative placeholder content for the third
-                      slide.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="prev"
-              >
-                <span
-                  class="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="next"
-              >
-                <span
-                  class="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-          </div>
-          <!--Fim do Container -->
-        </section>
+      </section>
+
+        <Carousel/>
+
+     
         <!-- Fim dos serviços -->
         <section class="caixa fundo">
           <!-- Ínicio da seção Agenda -->
@@ -282,7 +152,7 @@
           <!--Fim do coitaner-->
         </section>
         <!--Fim do Mapa da Oficina -->
-      </section>
+     
     </main>
     <Footer />
   </div>
@@ -292,12 +162,14 @@
 // @ is an alias to /src
 import Nav from "@/components/Nav.vue";
 import Footer from "@/components/Footer.vue";
+import Carousel from "@/components/Carousel.vue";
 
 export default {
   name: "HomeView",
   components: {
     Nav,
     Footer,
+    Carousel,
   },
 };
 </script>
@@ -308,15 +180,19 @@ export default {
   margin-top: 4.5em;
 }
 
- .section-carousel{
+section{
+  background: #121d24;
+}
+
+.section-carousel {
+  margin: 0px;
+  padding: 0px;
   margin-bottom: 30px;
- }
+}
 
- #principal{
-    background: #121d24;
- }
-
-
+#principal {
+  background: #121d24;
+}
 
 div h1 {
   margin-top: 2em;
