@@ -1,7 +1,7 @@
 <template>
     <section class="container-fluid menu">
         <ul>
-            <router-link to="/DashBoard"><li><font-awesome-icon icon="fa-solid fa-envelope" />&nbsp;&nbsp;&nbsp;E-mail</li></router-link>
+            <router-link to="/DashBoard"><li><font-awesome-icon icon="fa-regular fa-envelope" />&nbsp;&nbsp;&nbsp;E-mail</li></router-link>
             <router-link to="/Servicos"><li><font-awesome-icon icon="fa-solid fa-box" />&nbsp;&nbsp;&nbsp;Serviços</li></router-link>
             <router-link to="/hisEmail"><li><font-awesome-icon icon="fa-solid fa-clock-rotate-left" />&nbsp;&nbsp;&nbsp;Historico de E-mail</li></router-link>
             <router-link to="/Clientes"><li><font-awesome-icon icon="fa-solid fa-user-group" />&nbsp;&nbsp;&nbsp;Cliente</li></router-link>
