@@ -45,9 +45,9 @@
                 class="class-img "
                 src="../../public/imagem/servicos/servico_2.png"
               />
-              <div class="sumiu">
-                <h3 class="tf">Troca de óleo</h3>
-                <p>
+              <div class="sumiu" >
+                <h3 class="tf text-center">Troca de óleo</h3>
+                <p class="">
                   A média de intervalo entre as trocas de 10.000 km ou 12 meses
                   de uso
                 </p>
@@ -137,73 +137,60 @@ export default {
 .container {
   margin-top: 4.5em;
 }
+.fundo {
+  background: white;
+}
 .section-carousel {
   margin: 0px;
   padding: 0px;
   margin-bottom: 30px;
 }
-section {
+section, #principal{
   background: #121d24;
-}
-
-#principal {
-  background: #121d24;
-}
-
-.caixa figure {
-  width: 273px;
-  height: 330px;
 }
 
 .servicos {
   margin-top: 50px;
 }
-.tf {
-  margin-left: 120px;
+.tf{
+  margin-top: 120px;
   border-bottom: 5px solid rgb(231, 231, 231);
 }
 
 .btn-servicos {
-  margin-left: 150px;
+  margin-left: 80px;
+  margin-top: 10px;
 }
 
-.class-img:hover{
- 
-    opacity: 0.5;
 
-}
-.class-img {
-  border-radius: 30px 30px 30px 30px;
-}
 
-figure {
+.caixa { 
+  width: 273px;
+  height: 330px;
   position: relative;
+ 
   overflow: hidden;
 }
-figure .sumiu {
-  height: 100%;
-  position: absolute;
-  z-index: 1;
-  top: 120px;
-  left: -200%;
-  transition: 0.5s ease-in-out;
-  color: white;
-}
 
-figure:hover .sumiu {
+div .sumiu{
   background-color: yellow;
-  transform: translate(100%);
+  position: absolute;
+  top: 45%;
+  left: 10%;
+  transform: translate(0%, 445%);
+  height: 331px;
+  width: 273px;
+  transition: .5s;
+  z-index: 1;
+  
+}
 
+div:hover .sumiu{
+  transform: translate(-15px, -150px);
 
 }
 
-.config-agenda {
-  border-radius: 30px 30px 30px 30px;
-}
 
-.fundo {
-  background: white;
-}
 
 /*Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) {
