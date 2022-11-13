@@ -12,7 +12,7 @@
                   type="button"
                   data-bs-target="#carouselExampleCaptions"
                   data-bs-slide-to="0"
-                  class="active "
+                  class="active bg-warning"
                   aria-current="true"
                   aria-label="Slide 1"
                 ></button>
@@ -21,22 +21,25 @@
                   data-bs-target="#carouselExampleCaptions"
                   data-bs-slide-to="1"
                   aria-label="Slide 2"
+                  class="bg-warning"
                 ></button>
                 <button
                   type="button"
                   data-bs-target="#carouselExampleCaptions"
                   data-bs-slide-to="2"
                   aria-label="Slide 3"
+                  class="bg-warning"
                 ></button>
                 <button
                   type="button"
                   data-bs-target="#carouselExampleCaptions"
-                  data-bs-slide-to="2"
-                  aria-label="Slide 3"
+                  data-bs-slide-to="3"
+                  aria-label="Slide 4"
+                  class="bg-warning"
                 ></button>
               </div>
               <div class="carousel-inner" >
-                <div class="carousel-item active" data-bs-interval="10000" >
+                <div class="carousel-item active" data-bs-interval="100" >
                   <img
                     src="../assets/carrossel_1.png"
                     class="d-block w-100"
@@ -44,53 +47,53 @@
                   />
                   <div class="carousel-caption d-none d-md-block">
                     <h1 class="pb-5">Encotre o melhor orçamento de forma rápida e segura</h1>
-                    <h5>
+                    <h3>
                       Selecione o serviço
-                    </h5>
+                    </h3>
                   </div>
                 </div>
-                <div class="carousel-item" data-bs-interval="10000" >
+                <div class="carousel-item" data-bs-interval="100" >
                   <img
                     src="../assets/carrossel_2.png"
                     class="d-block w-100"
                     alt="..."
                   />
                   <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>
-                      Some representative placeholder content for the second
-                      slide.
-                    </p>
+                  <h1 class="pb-5">Crie sua conta de forma facilitada</h1>
+                    <h3 class="">
+                     Preencha os dados
+                    </h3>
                   </div>
                 </div>
-                <div class="carousel-item" data-bs-interval="10000" >
+                <div class="carousel-item" data-bs-interval="1000" >
                   <img
                     src="../assets/carrossel_3.png"
                     class="d-block w-100"
                     alt="..."
                   />
                   <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
-                    <p>
-                      Some representative placeholder content for the third
-                      slide.
-                    </p>
+                    <h1 class="pb-5">Seja atendido por um de nossos funcionários</h1>
+                    <h3 class="">
+                     Receba o orçamento grátis
+                    </h3>
                   </div>
                 </div>
-                <div class="carousel-item" data-bs-interval="10000" >
+                 <div class="carousel-item" data-bs-interval="1000" >
                   <img
-                    src="../assets/carrossel_3.png"
+                    src="../assets/carrossel_4.png"
                     class="d-block w-100"
                     alt="..."
                   />
                   <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
-                    <p>
-                      Some representative placeholder content for the third
-                      slide.
-                    </p>
+                    <h1 class="pb-5">Seja atendido por um de nossos funcionários</h1>
+                    <h3 class="">
+                     Receba o orçamento grátis
+                    </h3>
                   </div>
                 </div>
+
+                
+                
               </div>
               <button
                 class="carousel-control-prev"

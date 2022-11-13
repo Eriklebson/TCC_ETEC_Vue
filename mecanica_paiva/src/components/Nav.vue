@@ -23,26 +23,21 @@
             <li class="nav-item ms-3 pt-3">
               
               <a class="nav-link text-white" href="#">
-                <fa
-                  class=" me-2 user btn border border-white bg-white"
-                  :icon="['fas', 'user']"
-                />Atendimento</a>
+                <font-awesome-icon class="me-1" icon="fa-regular fa-user" />
+                Atendimento</a>
               
             </li>
             
             <li class="nav-item ms-3 pt-3">
-              <a class="nav-link text-white" href="#"><fa class="me-2 btn bg-white" :icon="['fas', 'bars']"/>Faça seu orçamento</a>
+              <a class="nav-link text-white" href="#"><font-awesome-icon icon="fa-regular fa-pen-to-square" /> Faça seu orçamento</a>
             </li>
 
             <li class="nav-item ms-3 pt-3">
-              <a class="nav-link btn text-white" href="#"><fa class="btn bg-white me-2 " :icon="['fas', 'arrow-right-to-bracket']" /> Login</a>
+              <a class="nav-link btn text-white" href="#"> <font-awesome-icon icon="fa-solid fa-arrow-right-to-bracket" /> Login</a>
             </li>
 
             <nav class="nav-item ms-3 pt-3" >    
-              <a href="" class="nav-link "><fa
-                  class=" bars btn border border-white bg-white"
-                  :icon="['fas', 'bars']"
-                /></a>   
+              <a href="" class="nav-link "> <font-awesome-icon class="text-light" icon="fa-solid fa-bars" /></a>   
                 
             </nav>
           </ul>

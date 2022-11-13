@@ -1,161 +1,119 @@
 <template>
-  <div>
-    <Nav />
-    <main>
-      <section>
-        <div class="container">
-          <div class="row" id="principal">
-            <div class="col-md-6 d-flex">
-              <div class="align-self-center text-dark">
-                <h1 class="text-start">Prestando serviços desde 1977.</h1>   
-              </div>
+  <main>
+    <section>
+      <div class="container">
+        <div class="row" id="principal">
+          <div class="col-md-6 d-flex">
+            <div class="align-self-center text-dark">
+              <h1 class="text-start text-white">
+                Prestando serviços desde 1977.
+              </h1>
             </div>
-            <div class="col-md-6 d-none d-md-block mt-5">
-              <img src="../../public/imagem/navbar/mecanico.png" style="height:400px; " alt="" />
-            </div>
+          </div>
+          <div class="col-md-6 d-none d-md-block mt-5">
+            <img
+              src="../../public/imagem/navbar/mecanico.png"
+              style="height: 400px"
+              alt=""
+            />
           </div>
         </div>
+      </div>
+    </section>
 
-      </section>
+    <Carousel />
 
-        <Carousel/>
-
-     
-        <!-- Fim dos serviços -->
-        <section class="caixa fundo">
-          <!-- Ínicio da seção Agenda -->
-          <div class="container caixa-fundo">
-            <div class="row justify-content-between text-center">
-              <div class="col-md-3 ms-4">
-                <!--Primeiro caixa -->
-                <figure class="config-agenda bg-warning custom-agenda">
-                  <img class="class-img" src="../assets/oleo.png" />
-                  <ul class="navbar-nav config-texto">
-                    <li class="mt-2">Troca de Óleo</li>
-                    <li class="mt-2">Telefone: (11) 3443-3434</li>
-                    <li class="mt-2">Celular: (11) 97878-5775</li>
-                    <li class="mt-2">
-                      <a class="btn btn-dark mb-4 mt-4" href="">Agendar</a>
-                    </li>
-                  </ul>
-                </figure>
-              </div>
-
-              <div class="col-md-3 ms-4">
-                <!--Segundo caixa -->
-                <figure class="config-agenda bg-warning custom-agenda">
-                  <img class="class-img" src="../assets/oleo.png" />
-                  <ul class="navbar-nav config-texto">
-                    <li class="mt-2">Troca de Óleo</li>
-                    <li class="mt-2">Telefone: (11) 3443-3434</li>
-                    <li class="mt-2">Celular: (11) 97878-5775</li>
-                    <li class="mt-2">
-                      <a class="btn btn-dark mb-4 mt-4" href="">Agendar</a>
-                    </li>
-                  </ul>
-                </figure>
-              </div>
-
-              <div class="col-md-3 ms-4">
-                <!--Terceira caixa -->
-                <figure class="config-agenda bg-warning custom-agenda">
-                  <img class="class-img" src="../assets/oleo.png" />
-                  <ul class="navbar-nav config-texto">
-                    <li class="mt-2">Troca de Óleo</li>
-                    <li class="mt-2">Telefone: (11) 3443-3434</li>
-                    <li class="mt-2">Celular: (11) 97878-5775</li>
-                    <li class="mt-2">
-                      <a class="btn btn-dark mb-4 mt-4" href="">Agendar</a>
-                    </li>
-                  </ul>
-                </figure>
-              </div>
-
-              <div class="col-md-3 ms-4 mt-4">
-                <!--Quarto caixa -->
-                <figure class="config-agenda bg-warning custom-agenda">
-                  <img class="class-img" src="../assets/oleo.png" />
-                  <ul class="navbar-nav config-texto">
-                    <li class="mt-2">Troca de Óleo</li>
-                    <li class="mt-2">Telefone: (11) 3443-3434</li>
-                    <li class="mt-2">Celular: (11) 97878-5775</li>
-                    <li class="mt-2">
-                      <a class="btn btn-dark mb-4 mt-4" href="">Agendar</a>
-                    </li>
-                  </ul>
-                </figure>
-              </div>
-
-              <div class="col-md-3 ms-4 mt-4">
-                <!--Quinto caixa -->
-                <figure class="config-agenda bg-warning custom-agenda">
-                  <img class="class-img" src="../assets/oleo.png" />
-                  <ul class="navbar-nav config-texto">
-                    <li class="mt-2">Troca de Óleo</li>
-                    <li class="mt-2">Telefone: (11) 3443-3434</li>
-                    <li class="mt-2">Celular: (11) 97878-5775</li>
-                    <li class="mt-2">
-                      <a class="btn btn-dark mb-4 mt-4" href="">Agendar</a>
-                    </li>
-                  </ul>
-                </figure>
-              </div>
-
-              <div class="col-md-3 ms-4 mt-4">
-                <!--Sexto caixa -->
-                <figure class="config-agenda bg-warning custom-agenda">
-                  <img class="class-img" src="../assets/oleo.png" />
-                  <ul class="navbar-nav config-texto">
-                    <li class="mt-2">Troca de Óleo</li>
-                    <li class="mt-2">Telefone: (11) 3443-3434</li>
-                    <li class="mt-2">Celular: (11) 97878-5775</li>
-                    <li class="mt-2">
-                      <a class="btn btn-dark mb-4 mt-4" href="">Agendar</a>
-                    </li>
-                  </ul>
-                </figure>
-              </div>
-            </div>
+    <section class="fundo">
+      <!-- Ínicio da seção Agenda -->
+      <div class="container-fluid">
+        <h1 class="text-center">Confira todos os serviços do Paiva</h1>
+        <div class="row justify-content-around servicos">
+          <div class="col-md-3 caixa">
+            <!--Primeiro caixa -->
+            <figure class="config-agenda custom-agenda">
+              <img
+                class="class-img"
+                src="../../public/imagem/servicos/servico_1.png"
+              />
+            </figure>
           </div>
-        </section>
-        <!-- Fim da seção Agenda -->
 
-        <section class="bg-white">
-          <!--Ínicio do Mapa da Oficina -->
-          <div class="container">
-            <!--Ínicio container -->
-            <div class="row">
-              <!--Ínicio da Row/grid -->
-              <div class="col-md-12">
-                <!--Ínicio Mapa-->
-                <iframe
-                  class="border border-warning rounded"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.3999703898203!2d-46.768539484913845!3d-23.697406772515766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5212f9627de5%3A0x1c5ccd29c1a3e96a!2sEtec%20Jardim%20%C3%82ngela!5e0!3m2!1spt-BR!2sbr!4v1637707051920!5m2!1spt-BR!2sbr"
-                  width="1130"
-                  height="340"
-                  style="border: 0"
-                  allowfullscreen=""
-                  loading="lazy"
-                ></iframe>
+          <div class="col-md-3 caixa">
+            <!--Segundo caixa -->
+            <figure class="config-agenda ">
+              <img
+                class="class-img "
+                src="../../public/imagem/servicos/servico_2.png"
+              />
+              <div class="sumiu">
+                <h3 class="tf">Troca de óleo</h3>
                 <p>
-                  <strong>
-                    End: Estr. da Baronesa, 1695 - Jd. Nakamura, São Paulo
-                  </strong>
-                  <strong>CEP: 04941-175 </strong><br />
-                  <strong>Tel: (11)6667-7777 </strong>
+                  A média de intervalo entre as trocas de 10.000 km ou 12 meses
+                  de uso
                 </p>
+
+                <button class="btn btn-dark btn-servicos">Contratar</button>
               </div>
-              <!--Fim Mapa-->
-            </div>
-            <!--Fim da Row/grid -->
+            </figure>
           </div>
-          <!--Fim do coitaner-->
-        </section>
-        <!--Fim do Mapa da Oficina -->
-     
-    </main>
-    <Footer />
-  </div>
+
+          <div class="col-md-3 caixa">
+            <!--Terceira caixa -->
+            <figure class="config-agenda">
+              <img
+                class="class-img"
+                src="../../public/imagem/servicos/servico_3.png"
+              />
+            </figure>
+          </div>
+
+          <div class="col-md-3 caixa">
+            <!--Quarto caixa -->
+            <figure class="config-agenda">
+              <img
+                class="class-img"
+                src="../../public/imagem/servicos/servico_4.png"
+              />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Fim da seção Agenda -->
+
+    <section class="bg-white">
+      <!--Ínicio do Mapa da Oficina -->
+      <div class="container">
+        <!--Ínicio container -->
+        <div class="row">
+          <!--Ínicio da Row/grid -->
+          <div class="col-md-12">
+            <!--Ínicio Mapa-->
+            <iframe
+              class="border border-warning rounded mt-5"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.3999703898203!2d-46.768539484913845!3d-23.697406772515766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5212f9627de5%3A0x1c5ccd29c1a3e96a!2sEtec%20Jardim%20%C3%82ngela!5e0!3m2!1spt-BR!2sbr!4v1637707051920!5m2!1spt-BR!2sbr"
+              width="1130"
+              height="340"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+            <p>
+              <strong>
+                End: Estr. da Baronesa, 1695 - Jd. Nakamura, São Paulo
+              </strong>
+              <strong>CEP: 04941-175 </strong><br />
+              <strong>Tel: (11)6667-7777 </strong>
+            </p>
+          </div>
+          <!--Fim Mapa-->
+        </div>
+        <!--Fim da Row/grid -->
+      </div>
+      <!--Fim do coitaner-->
+    </section>
+    <!--Fim do Mapa da Oficina -->
+  </main>
 </template>
 
 <script>
@@ -179,114 +137,72 @@ export default {
 .container {
   margin-top: 4.5em;
 }
-
-section{
-  background: #121d24;
-}
-
 .section-carousel {
   margin: 0px;
   padding: 0px;
   margin-bottom: 30px;
+}
+section {
+  background: #121d24;
 }
 
 #principal {
   background: #121d24;
 }
 
-div h1 {
-  margin-top: 2em;
-  color: white;
+.caixa figure {
+  width: 273px;
+  height: 330px;
 }
 
-p {
-  color: white;
+.servicos {
+  margin-top: 50px;
 }
-/*Formatação de texto em geral*/
-h1 {
-  font-weight: 900;
-  letter-spacing: -0.05em;
-  margin-bottom: 50px;
-}
-h2 {
-  font-size: 3em;
-  font-weight: 700;
-  letter-spacing: -0.4;
-}
-h3 {
-  font-size: 2em;
-  font-weight: 700;
-  letter-spacing: -0.04;
-}
-h4 {
-  font-weight: 700;
-}
-.fa-1,
-.fa-2,
-.fa-3,
-.fa-4 {
-  color: white;
-  background: #ffc107;
-  border: 2px solid red;
-  padding: 20px;
-  border-radius: 50px;
-}
-.servicos a {
-  color: #ffc107;
-  text-decoration: none;
-}
-.secao-servicos {
-  background: white;
-  padding-bottom: 120px;
-}
-.teste {
-  line-height: 1.6;
+.tf {
+  margin-left: 120px;
+  border-bottom: 5px solid rgb(231, 231, 231);
 }
 
-.redes {
-  font-weight: 700;
-  font-size: 18px;
+.btn-servicos {
+  margin-left: 150px;
 }
-.whatsapp {
-  color: green;
-  font-size: 30px;
-}
-.facebook {
-  color: rgb(25, 0, 247);
-  font-size: 30px;
-}
-.youtube {
-  color: rgb(255, 9, 9);
-  font-size: 30px;
-}
-.twitter {
-  color: rgb(8, 83, 245);
-  font-size: 30px;
-}
-.instagram {
-  color: rgb(255, 255, 255);
-  font-size: 30px;
+
+.class-img:hover{
+ 
+    opacity: 0.5;
+
 }
 .class-img {
   border-radius: 30px 30px 30px 30px;
 }
 
+figure {
+  position: relative;
+  overflow: hidden;
+}
+figure .sumiu {
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 120px;
+  left: -200%;
+  transition: 0.5s ease-in-out;
+  color: white;
+}
+
+figure:hover .sumiu {
+  background-color: yellow;
+  transform: translate(100%);
+
+
+}
+
 .config-agenda {
-  width: 290px;
-  border: 0 solid orange;
   border-radius: 30px 30px 30px 30px;
 }
-.custom-agenda:hover {
-  background: #6207e3;
-  color: white;
-  transition: background 0.6s, color 0.6s;
-}
+
 .fundo {
-  background: url(../assets/teste3.png);
-  background-attachment: fixed;
-}
-.caixa-fundo {
-  margin-top: 0px;
+  background: white;
 }
 
 /*Small devices (landscape phones, 576px and up)*/
@@ -318,24 +234,5 @@ h4 {
 
 /* Extra large devices (large desktops, 1200px and up*/
 @media (min-width: 1200px) and (max-width: 1380.98px) {
-  #inputPassword2 {
-    width: 23em;
-  }
-  button {
-    margin-left: -1em;
-  }
-  #principal {
-    margin-left: 2em;
-  }
-
-  section h4 {
-    padding-top: 1em;
-    font-size: 24px;
-  }
-
-  .sub-titulos {
-    position: relative;
-    top: -20px;
-  }
 }
 </style>

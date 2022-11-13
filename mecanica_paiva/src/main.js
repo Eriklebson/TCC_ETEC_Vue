@@ -11,5 +11,6 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 
+
 library.add(fas, far, fab),
 createApp(App).component('font-awesome-icon', FontAwesomeIcon ).use(bootstrap).use(router).mount('#app');
