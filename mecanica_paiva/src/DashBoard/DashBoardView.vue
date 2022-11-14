@@ -1,7 +1,7 @@
 <template>
     <Nav />
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3 menu">
             <Menu />
         </div>
         <div class="col-md-9 itens">

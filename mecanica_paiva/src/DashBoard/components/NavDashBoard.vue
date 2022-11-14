@@ -6,15 +6,7 @@
             ><!--Logo** Colocar a largura do tamanho da imagem sempre -->
             <img src="@/../public/imagem/navbar/logo.png" width="250" />
           </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
@@ -45,10 +37,6 @@
 <style scoped>
 nav{
     background: #121D24;
-}
-.container-fluid{
-    padding-left: 0px;
-    padding-right: 0px;
 }
   
 /*Small devices (landscape phones, 576px and up)*/

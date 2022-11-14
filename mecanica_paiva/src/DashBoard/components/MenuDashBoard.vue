@@ -7,7 +7,7 @@
             <router-link to="/DashBoard/Clientes"><li><font-awesome-icon icon="fa-solid fa-user-group" />&nbsp;&nbsp;&nbsp;Cliente</li></router-link>
             <router-link to="/DashBoard/Estatisticas"><li><font-awesome-icon icon="fa-solid fa-chart-line" />&nbsp;&nbsp;&nbsp;Estatísticas</li></router-link>
             <router-link to="/DashBoard/Gerenciar"><li><font-awesome-icon icon="fa-solid fa-house" />  &nbsp;&nbsp;&nbsp;Gerenciar</li></router-link>
-            <router-link to="/DashBoard/Configuracoes"><li><font-awesome-icon icon="fa-solid fa-gear" />&nbsp;&nbsp;&nbsp;Configurações</li></router-link>
+            <router-link to="/Configuracoes"><li><font-awesome-icon icon="fa-solid fa-gear" />&nbsp;&nbsp;&nbsp;Configurações</li></router-link>
         </ul>
     </section>
 </template>
