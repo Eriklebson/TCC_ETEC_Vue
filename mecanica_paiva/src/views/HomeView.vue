@@ -25,7 +25,7 @@
 
     <section class="fundo">
       <!-- Ínicio da seção Agenda -->
-      <div class="container-fluid">
+      <div class="container">
         <h1 class="text-center">Confira todos os serviços do Paiva</h1>
         <div class="row justify-content-around servicos">
           <div class="col-md-3 caixa">
@@ -104,12 +104,8 @@
             </figure>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="fundo">
-      <!-- Ínicio da seção Agenda -->
-      <div class="container-fluid">
+         <!-- Ínicio da seção Agenda -->
+      
         <div class="row justify-content-around servicos">
           <div class="col-md-3 caixa">
             <!--Primeiro caixa -->
@@ -188,7 +184,10 @@
           </div>
         </div>
       </div>
+
     </section>
+
+    
     <!-- Fim da seção Agenda -->
     <section id="whats">
       <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
@@ -341,6 +340,7 @@ section,
   margin-top: 30px;
 }
 .caixa {
+  margin: 15px 0px;
   width: 273px;
   height: 330px;
   position: relative;
