@@ -5,7 +5,7 @@
         <div class="row" id="principal">
           <div class="col-md-6 d-flex">
             <div class="align-self-center text-dark">
-              <h1 class="text-start text-white">
+              <h1 class="text-white ms-5">
                 Prestando serviços desde 1977.
               </h1>
             </div>
@@ -104,8 +104,8 @@
             </figure>
           </div>
         </div>
-         <!-- Ínicio da seção Agenda -->
-      
+        <!-- Ínicio da seção Agenda -->
+
         <div class="row justify-content-around servicos">
           <div class="col-md-3 caixa">
             <!--Primeiro caixa -->
@@ -184,20 +184,37 @@
           </div>
         </div>
       </div>
-
     </section>
 
-    
     <!-- Fim da seção Agenda -->
-    <section id="whats">
-      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="../../public/imagem/contate_nos/whatsapp_image.png" class="d-block w-100" alt="...">
-    </div> 
-  </div>
-</div>
+
+    <!--banner whats -->
+    <section class="banner">
+      <div
+        id="carouselExampleCaptions"
+        class="carousel slide"
+        data-bs-ride="false"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="../../public/imagem/contate_nos/whatsapp_image.png"
+              class="d-block w-100"
+              alt="..."
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <div class="text-whats text-start">
+                <h1 class="">Enviar uma mensagem via Whatasapp</h1>
+                <button class="btn btn-success rounded btn-whats">
+                  Clique Aqui
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
+    <!--banner whats fim-->
 
     <section class="bg-white maps">
       <!--Ínicio do Mapa da Oficina -->
@@ -228,24 +245,21 @@
 
           <div class="col-md-6 border border-dark teste">
             <form class="">
-              <div class="d-flex justify-content-between contrate ">
-                <h1>Contrate-nos</h1>
-                <img src="../../public/imagem/contate_nos/carIcon.png" alt="">
+              <div class="d-flex justify-content-between contrate">
+                <h3>Contrate-nos</h3>
+                <img src="../../public/imagem/contate_nos/carIcon.png" alt="" />
               </div>
-              <div class="mb-3 ms-1 me-1">
-                <label for="exampleInputEmail1" class="form-label"
-                  >Nome</label
-                >
+              <div class="mb-3 ms-4 me-5 mt-5">
+                <label for="exampleInputEmail1" class="form-label">Nome</label>
                 <input
                   type="text"
                   class="form-control"
                   id="exampleInputEmail1"
                   aria-describedby=""
                 />
-                
               </div>
 
-              <div class="mb-3 mb-3 ms-1 me-1">
+              <div class="mb-3 ms-4 me-5 me-1">
                 <label for="exampleInputPassword1" class="form-label"
                   >E-mail</label
                 >
@@ -255,7 +269,7 @@
                   id="exampleInputPassword1"
                 />
               </div>
-              <div class="mb-3 mb-3 ms-1 me-1">
+              <div class="mb-3 ms-4 me-5 me-1">
                 <label for="exampleFormControlTextarea1" class="form-label"
                   >Mensagem</label
                 >
@@ -265,7 +279,7 @@
                   rows="3"
                 ></textarea>
               </div>
-              <button type="submit" class="btn btn-primary ms-1">Submit</button>
+              <button type="submit" class="btn  btn-dark ms-4 btn-form text-white">Enviar</button>
             </form>
           </div>
           <!--Fim Mapa-->
@@ -274,7 +288,6 @@
       </div>
       <!--Fim do coitaner-->
     </section>
-
 
     <!--Fim do Mapa da Oficina -->
   </main>
@@ -301,6 +314,21 @@ export default {
 .container {
   margin-top: 4.5em;
 }
+.banner{
+  margin-top: 40px;
+}
+.text-whats {
+  position: relative;
+  right: 190px;
+  width: 500px;
+}
+.btn-whats {
+  position: relative;
+  left: 220px;
+  top: -44px;
+  background-color: #00b721;
+}
+
 .fundo {
   background: white;
 }
@@ -327,16 +355,9 @@ section,
   margin-top: 10px;
 }
 
-.contrate{
- background: #121D24;
- color: white;
- 
-}
-.teste{
-  padding: 0px;
-}
 
-#whats{
+
+#whats {
   margin-top: 30px;
 }
 .caixa {
@@ -346,7 +367,7 @@ section,
   position: relative;
   overflow: hidden;
 }
-.maps{
+.maps {
   margin-bottom: 40px;
 }
 
@@ -371,6 +392,21 @@ section,
 .caixa:hover .sumiu {
   transform: translate(-15px, -150px);
 }
+
+.btn-form{
+  background-color: #121D24;
+  margin-bottom: 20px;
+  
+}
+.teste {
+  padding: -0px;
+}
+.contrate {
+  background: #121d24;
+  color: white;
+  padding: 20px;
+}
+
 
 /*Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) {

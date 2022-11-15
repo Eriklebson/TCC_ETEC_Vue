@@ -39,7 +39,7 @@
                 ></button>
               </div>
               <div class="carousel-inner" >
-                <div class="carousel-item active" data-bs-interval="100" >
+                <div class="carousel-item active" data-bs-interval="10000" >
                   <img
                     src="../assets/carrossel_1.png"
                     class="d-block w-100"
@@ -52,7 +52,7 @@
                     </h3>
                   </div>
                 </div>
-                <div class="carousel-item" data-bs-interval="100" >
+                <div class="carousel-item" data-bs-interval="10000" >
                   <img
                     src="../assets/carrossel_2.png"
                     class="d-block w-100"
@@ -65,7 +65,7 @@
                     </h3>
                   </div>
                 </div>
-                <div class="carousel-item" data-bs-interval="1000" >
+                <div class="carousel-item" data-bs-interval="10000" >
                   <img
                     src="../assets/carrossel_3.png"
                     class="d-block w-100"
@@ -78,7 +78,7 @@
                     </h3>
                   </div>
                 </div>
-                 <div class="carousel-item" data-bs-interval="1000" >
+                 <div class="carousel-item" data-bs-interval="10000" >
                   <img
                     src="../assets/carrossel_4.png"
                     class="d-block w-100"
