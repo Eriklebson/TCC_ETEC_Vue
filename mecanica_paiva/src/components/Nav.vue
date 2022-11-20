@@ -22,7 +22,7 @@
             
             <li class="nav-item ms-3 pt-3">
               
-              <a class="nav-link text-white" href="#">
+              <a class="nav-link text-white" href="">
                 <font-awesome-icon class="me-1" icon="fa-regular fa-user" />
                 Atendimento</a>
               
@@ -37,8 +37,7 @@
             </li>
 
             <nav class="nav-item ms-3 pt-3" >    
-              <a href="" class="nav-link "> <font-awesome-icon class="text-light" icon="fa-solid fa-bars" /></a>   
-                
+              <a href="" class="nav-link "> <font-awesome-icon class="text-light" icon="fa-solid fa-bars" /></a>                  
             </nav>
           </ul>
         </div>
