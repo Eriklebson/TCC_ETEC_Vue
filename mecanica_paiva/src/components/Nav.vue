@@ -2,7 +2,7 @@
   <div id="nav" class="container">
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container">
-        <a href="#" class="ms-5"
+        <a href="/" class="ms-5"
           ><!--Logo** Colocar a largura do tamanho da imagem sempre -->
           <img src="@/../public/imagem/navbar/logo.png" width="250" />
         </a>
@@ -22,18 +22,18 @@
             
             <li class="nav-item ms-3 pt-3">
               
-              <a class="nav-link text-white" href="">
+             <router-link class="nav-link text-white" to="/">
                 <font-awesome-icon class="me-1" icon="fa-regular fa-user" />
-                Atendimento</a>
+                Atendimento</router-link>
               
             </li>
             
             <li class="nav-item ms-3 pt-3">
-              <a class="nav-link text-white" href="#"><font-awesome-icon icon="fa-regular fa-pen-to-square" /> Faça seu orçamento</a>
+            <router-link class="nav-link text-white" to="/"><font-awesome-icon icon="fa-regular fa-pen-to-square" /> Faça seu orçamento</router-link>
             </li>
 
             <li class="nav-item ms-3 pt-3">
-              <a class="nav-link btn text-white" href="#"> <font-awesome-icon icon="fa-solid fa-arrow-right-to-bracket" /> Login</a>
+             <router-link class="nav-link text-white" to="/login"><font-awesome-icon class="me-2" icon="fa-solid fa-arrow-right-to-bracket" />Login </router-link>
             </li>
 
             <nav class="nav-item ms-3 pt-3" >    

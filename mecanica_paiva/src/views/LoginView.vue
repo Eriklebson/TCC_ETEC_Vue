@@ -40,7 +40,7 @@
 
           <div class="mt-3">
             <span class="ms-5">Não tem uma conta?</span
-            ><span class="ms-1"><a href="#">Registre-se</a></span>
+            ><span class="ms-1"><router-link class="text-warning " to="/cadastro">Registre-se </router-link></span>
           </div>
 
           <div class="mt-5">
@@ -68,11 +68,7 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  margin: 0 auto;
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
+
 
 .caixa {
   width: 460px;
@@ -86,44 +82,40 @@ export default {
   margin-top: 50px;
  
 }
+.container {
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
 
 input {
   width: 352px;
   height: 50px;
-  
 }
-
 main {
   background-color: #121d24;
   padding-top: 40px;
   padding-bottom: 10px;
 }
-
 h1 {
   color: #fff;
   width: 310px;
 }
-
 a {
   color: yellow;
   text-decoration: none;
 }
-
-
 
 #exampleInputEmail1 {
   padding-left: 40px;
   background-color: #161515;
   color: #fff;
 }
-
 #exampleInputPassword1 {
   padding-left: 40px;
   background-color: #161515;
   color: #fff;
 }
-
-
 
 .btn {
   color: yellow;

@@ -5,9 +5,7 @@
         <div class="row" id="principal">
           <div class="col-md-6 d-flex">
             <div class="align-self-center text-dark">
-              <h1 class="text-white ms-5">
-                Prestando serviços desde 1977.
-              </h1>
+              <h1 class="text-white ms-5">Prestando serviços desde 1977.</h1>
             </div>
           </div>
           <div class="col-md-6 d-none d-md-block mt-5">
@@ -226,17 +224,17 @@
             <h1>Localização</h1>
             <!--Ínicio Mapa-->
             <iframe
-              class="border border-warning rounded mt-5"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.3999703898203!2d-46.768539484913845!3d-23.697406772515766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5212f9627de5%3A0x1c5ccd29c1a3e96a!2sEtec%20Jardim%20%C3%82ngela!5e0!3m2!1spt-BR!2sbr!4v1637707051920!5m2!1spt-BR!2sbr"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d913.226583646936!2d-46.77097899203496!3d-23.715038671906676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce4db47a05d83b%3A0xa8159e238a90ad1b!2sMecanica%20Paiva%26AutoEletrica!5e0!3m2!1spt-BR!2sbr!4v1668960835434!5m2!1spt-BR!2sbr"
               width="500"
               height="300"
               style="border: 0"
               allowfullscreen=""
               loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
             <p>
               <strong>
-                End: Estr. da Baronesa, 1695 - Jd. Nakamura, São Paulo
+                Estr. da Cumbica, 2b - Cidade Ipava, São Paulo - SP -
               </strong>
               <strong>CEP: 04941-175 </strong><br />
               <strong>Tel: (11)6667-7777 </strong>
@@ -279,7 +277,12 @@
                   rows="3"
                 ></textarea>
               </div>
-              <button type="submit" class="btn  btn-dark ms-4 btn-form text-white">Enviar</button>
+              <button
+                type="submit"
+                class="btn btn-dark ms-4 btn-form text-white"
+              >
+                Enviar
+              </button>
             </form>
           </div>
           <!--Fim Mapa-->
@@ -314,7 +317,7 @@ export default {
 .container {
   margin-top: 4.5em;
 }
-.banner{
+.banner {
   margin-top: 40px;
 }
 .text-whats {
@@ -355,8 +358,6 @@ section,
   margin-top: 10px;
 }
 
-
-
 #whats {
   margin-top: 30px;
 }
@@ -393,10 +394,9 @@ section,
   transform: translate(-15px, -150px);
 }
 
-.btn-form{
-  background-color: #121D24;
+.btn-form {
+  background-color: #121d24;
   margin-bottom: 20px;
-  
 }
 .teste {
   padding: -0px;
@@ -406,7 +406,6 @@ section,
   color: white;
   padding: 20px;
 }
-
 
 /*Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) {

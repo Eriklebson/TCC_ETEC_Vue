@@ -29,6 +29,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/LoginView.vue')
   },
   {
+    path: '/cadastro',
+    name: 'cadastro',
+    component: () => import(/* webpackChunkName: "about" */ '../views/CadastroView.vue')
+  },
+  {
     path: '/DashBoard',
     name: 'DashBoard',
     component: DashBoard,
