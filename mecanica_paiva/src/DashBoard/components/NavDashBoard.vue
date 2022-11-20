@@ -18,7 +18,7 @@
                 <a class="nav-link text-white" href="#">Ajuda</a>
               </li>
               <li class="nav-item ms-3 pt-3 fw-bold text-center">
-                <a class="nav-link btn text-white" href="#">Sair</a>
+                <router-link class="nav-link btn text-white" to="/">Sair</router-link>
               </li>
             </ul>
           </div>

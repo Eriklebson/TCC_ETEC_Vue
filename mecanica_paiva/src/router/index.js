@@ -1,9 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
+import Login from '../views/LoginView.vue';
+import About from '../views/AboutView.vue';
+import Cadastro from '../views/CadastroView.vue'
 import DashBoard from '../DashBoard/DashBoardView.vue';
 import Emails from '../DashBoard/views/EmailView.vue';
 import Servicos from '../DashBoard/views/ServicosView.vue';
-import hisEmail from '../DashBoard/views/HisEmailView.vue';
+import hisServicos from '../DashBoard/views/HisServicosView.vue';
 import Clientes from '../DashBoard/views/ClientesView.vue';
 import Estatisticas from '../DashBoard/views/EstatisticasView.vue';
 import Gerenciar from '../DashBoard/views/GerenciarView.vue';
@@ -21,17 +24,17 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    component: About
   },
   {
     path: '/login',
     name: 'login',
-    component: () => import(/* webpackChunkName: "about" */ '../views/LoginView.vue')
+    component: Login,
   },
   {
     path: '/cadastro',
     name: 'cadastro',
-    component: () => import(/* webpackChunkName: "about" */ '../views/CadastroView.vue')
+    component: Cadastro,
   },
   {
     path: '/DashBoard',
@@ -49,9 +52,9 @@ const routes = [
         component: Servicos,
       },
       {
-        path: '/DashBoard/hisEmail',
-        name: 'hisEmail',
-        component: hisEmail,
+        path: '/DashBoard/hisServicos',
+        name: 'hisServicos',
+        component: hisServicos,
       },
       {
         path: '/DashBoard/Clientes',

@@ -36,7 +36,7 @@
             />
             <p><a href="#">Esqueci minha senha</a></p>
           </div>
-          <button type="submit" class="btn entrar">Entrar</button>
+          <router-link to="/DashBoard" type="submit" class="btn entrar">Entrar</router-link>
 
           <div class="mt-3">
             <span class="ms-5">Não tem uma conta?</span
