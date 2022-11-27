@@ -19,6 +19,7 @@ const ContaController = require('../controllers/conta-controller')
 router.get('/', ContaController.getConta);
 router.get('/:id_conta', ContaController.getUmaConta);
 router.post('/', ContaController.postConta);
+router.post('/autenticacao', ContaController.postAutenticacao);
 
 
 module.exports = router;

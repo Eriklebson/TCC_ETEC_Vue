@@ -10,7 +10,11 @@ import hisServicos from '../DashBoard/views/HisServicosView.vue';
 import Clientes from '../DashBoard/views/ClientesView.vue';
 import Estatisticas from '../DashBoard/views/EstatisticasView.vue';
 import Gerenciar from '../DashBoard/views/GerenciarView.vue';
-import Configuracoes from '../DashBoard/views/ConfiguracoesView.vue'
+import Configuracoes from '../DashBoard/views/ConfiguracoesView.vue';
+import Conta from '../DashBoard/views/ContaView.vue';
+import Agenda from '../DashBoard/views/AgendaView.vue';
+import Historico from '../DashBoard/views/HistoricoView.vue';
+import Carros from '../DashBoard/views/CarrosView.vue';
 
 const routes = [
   {
@@ -42,7 +46,7 @@ const routes = [
     component: DashBoard,
     children:[
       {
-        path: '/DashBoard',
+        path: '/DashBoard/Emails',
         name: 'Emails',
         component: Emails,
       },
@@ -75,6 +79,26 @@ const routes = [
         path: '/DashBoard/Configuracoes',
         name: 'Configuracoes',
         component: Configuracoes,
+      },
+      {
+        path: '/DashBoard/Conta',
+        name: 'Conta',
+        component: Conta,
+      },
+      {
+        path: '/DashBoard/Agenda',
+        name: 'Agenda',
+        component: Agenda,
+      },
+      {
+        path: '/DashBoard/Historico',
+        name: 'Historico',
+        component: Historico,
+      },
+      {
+        path: '/DashBoard/Carros',
+        name: 'Carros',
+        component: Carros,
       },
     ]
   }

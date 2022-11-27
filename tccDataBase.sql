@@ -65,6 +65,7 @@ foreign key (cep) references endereco(cep)
 create table conta_site(
 id_conta integer auto_increment PRIMARY KEY,
 tipo_conta integer(1) not null,
+nome varchar(255) not null,
 email varchar(30) not null,
 senha varchar(255) not null,
 id_status integer,
