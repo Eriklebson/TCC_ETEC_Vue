@@ -21,6 +21,7 @@
             </div>
         </div>
     </div>
+
     <div class="modal" tabindex="-1" v-show="edit">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -63,6 +64,7 @@
             </div>
         </div>
     </div>
+    
     <div class="modal" tabindex="-1" v-show="visualizar">
         <div class="modal-dialog visualizar">
             <div class="modal-content visualizar-content">

@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <Nav v-if="!$route.path.includes('/DashBoard')"/>
+    <Nav v-if="!$route.path.includes('/DashBoard') "/>
     <router-view/>
     <Footer v-if="!$route.path.includes('/DashBoard')"/>
   </nav>
