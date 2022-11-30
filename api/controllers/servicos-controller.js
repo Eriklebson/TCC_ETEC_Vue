@@ -32,11 +32,12 @@ exports.getUmServicos = (req, res, next)=>{
     })
 };
 exports.postServicos = (req, res, next)=>{
+    console.log(req.file);
     mysql.getConnection((error, conn) => {
         if(error){return res.status(500).send({error: error})}
         conn.query(
-            `insert into servicos (tipo, tempo, valor) values (?, ?, ?);`,
-            [req.body.tipo ,req.body.tempo, req.body.valor],
+            `insert into servicos(imagem, tipo, tempo, valor) values (?, ?, ?, ?);`,
+            [req.file.filename, req.body.tipo ,req.body.tempo, req.body.valor],
             (error, resultado, fields) => {
                 if(error){return res.status(500).send({error: error})}
                 res.status(201).send({

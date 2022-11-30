@@ -57,7 +57,6 @@ export default {
           senha: this.input_senha,
       })
       await axios.post("http://10.0.0.176:3000/contas/autenticacao", body, {headers}).then(response => this.conta = response.data).catch(error => console.log(error))
-      console.log(this.conta.autenticado);
       if(this.conta.autenticado == true){
         this.$router.push({name: 'DashBoard', query:{id: this.conta.id_conta}})
       }

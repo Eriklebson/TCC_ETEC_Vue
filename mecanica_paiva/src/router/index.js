@@ -4,11 +4,10 @@ import Login from '../views/LoginView.vue';
 import About from '../views/AboutView.vue';
 import Cadastro from '../views/CadastroView.vue'
 import DashBoard from '../DashBoard/DashBoardView.vue';
-import Emails from '../DashBoard/views/EmailView.vue';
+import Usuarios from '../DashBoard/views/UsuariosView.vue';
 import Servicos from '../DashBoard/views/ServicosView.vue';
 import hisServicos from '../DashBoard/views/HisServicosView.vue';
 import Clientes from '../DashBoard/views/ClientesView.vue';
-import Estatisticas from '../DashBoard/views/EstatisticasView.vue';
 import Gerenciar from '../DashBoard/views/GerenciarView.vue';
 import Configuracoes from '../DashBoard/views/ConfiguracoesView.vue';
 import Conta from '../DashBoard/views/ContaView.vue';
@@ -46,9 +45,9 @@ const routes = [
     component: DashBoard,
     children:[
       {
-        path: '/DashBoard/Emails',
-        name: 'Emails',
-        component: Emails,
+        path: '/DashBoard/Usuarios',
+        name: 'Usuarios',
+        component: Usuarios,
       },
       {
         path: '/DashBoard/Servicos',
@@ -64,11 +63,6 @@ const routes = [
         path: '/DashBoard/Clientes',
         name: 'Clientes',
         component: Clientes,
-      },
-      {
-        path: '/DashBoard/Estatisticas',
-        name: 'Estatisticas',
-        component: Estatisticas,
       },
       {
         path: '/DashBoard/Gerenciar',
