@@ -2,15 +2,17 @@
     <Nav />
     <div class="row">
         <div class="col-md-3 menu">
-            <Menu />
+            <Menu :conta="conta"/>
         </div>
         <div class="col-md-9 itens">
-            <router-view/>
+            <h3 v-if="!$route.path.includes('/DashBoard/')">Bem vindo {{conta.nome}}</h3>
+            <router-view />
         </div>
     </div>
 </template>
 
 <script>
+    import axios from "axios";
     import Nav from "@/DashBoard/components/NavDashBoard.vue";
     import Menu from "@/DashBoard/components/MenuDashBoard.vue";
     export default{
@@ -18,6 +20,23 @@
         components: {
             Nav,
             Menu,
+        },
+        data(){
+            return{
+                conta: [],
+            }
+        },
+        async created(){
+            //Bloquear a rota da DashBoard para entrar so quando logar
+            /*if(this.$route.query.id == null){
+                this.$router.push("/")
+            }
+            else{
+                await axios.get("http://10.0.0.176:3000/contas/" + this.$route.query.id).then(response => this.conta = response.data).catch(error => console.log(error))
+            }*/
+
+            //remover essa linha quando tudo tiver pronto e habilitar a de cima
+            await axios.get("http://10.0.0.176:3000/contas/" + this.$route.query.id).then(response => this.conta = response.data).catch(error => console.log(error))
         }
     }
 </script>

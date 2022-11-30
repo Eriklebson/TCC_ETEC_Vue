@@ -1,19 +1,26 @@
 <template>
     <section class="container-fluid menu">
-        <ul>
-            <router-link to="/DashBoard"><li><font-awesome-icon icon="fa-regular fa-envelope" />&nbsp;&nbsp;&nbsp;E-mail</li></router-link>
-            <router-link to="/DashBoard/Servicos"><li><font-awesome-icon icon="fa-solid fa-box" />&nbsp;&nbsp;&nbsp;Serviços</li></router-link>
-            <router-link to="/DashBoard/hisServicos"><li><font-awesome-icon icon="fa-solid fa-clock-rotate-left" />&nbsp;&nbsp;&nbsp;Historico de Serviços</li></router-link>
-            <router-link to="/DashBoard/Clientes"><li><font-awesome-icon icon="fa-solid fa-user-group" />&nbsp;&nbsp;&nbsp;Cliente</li></router-link>
-            <router-link to="/DashBoard/Estatisticas"><li><font-awesome-icon icon="fa-solid fa-chart-line" />&nbsp;&nbsp;&nbsp;Estatísticas</li></router-link>
-            <router-link to="/DashBoard/Gerenciar"><li><font-awesome-icon icon="fa-solid fa-house" />  &nbsp;&nbsp;&nbsp;Gerenciar</li></router-link>
-            <router-link to="/DashBoard/Configuracoes"><li><font-awesome-icon icon="fa-solid fa-gear" />&nbsp;&nbsp;&nbsp;Configurações</li></router-link>
+        <ul v-if="conta.tipo_conta == 1">
+            <router-link :to="{name: 'Usuarios', query:{id: conta.id_conta}}"><li><font-awesome-icon icon="fa-solid fa-user-group" />&nbsp;&nbsp;&nbsp;Usuarios</li></router-link>
+            <router-link :to="{name: 'Servicos', query:{id: conta.id_conta}}"><li><font-awesome-icon icon="fa-solid fa-box" />&nbsp;&nbsp;&nbsp;Serviços</li></router-link>
+            <router-link :to="{name: 'hisServicos', query:{id: conta.id_conta}}"><li><font-awesome-icon icon="fa-solid fa-clock-rotate-left" />&nbsp;&nbsp;&nbsp;Historico de Serviços</li></router-link>
+            <router-link :to="{name: 'Clientes', query:{id: conta.id_conta}}"><li><font-awesome-icon icon="fa-solid fa-user-group" />&nbsp;&nbsp;&nbsp;Clientes</li></router-link>
+            <router-link :to="{name: 'Gerenciar', query:{id: conta.id_conta}}"><li><font-awesome-icon icon="fa-solid fa-house" />  &nbsp;&nbsp;&nbsp;Gerenciar</li></router-link>
+            <router-link :to="{name: 'Configuracoes', query:{id: conta.id_conta}}"><li><font-awesome-icon icon="fa-solid fa-gear" />&nbsp;&nbsp;&nbsp;Configurações</li></router-link>
+        </ul>
+        <ul v-else>
+            <router-link :to="{name: 'Conta', query:{id: conta.id_conta}}"><li><font-awesome-icon icon="fa-solid fa-house" />&nbsp;&nbsp;&nbsp;Conta</li></router-link>
+            <router-link :to="{name: 'Agenda', query:{id: conta.id_conta}}"><li><font-awesome-icon icon="fa-solid fa-box" />&nbsp;&nbsp;&nbsp;Agenda</li></router-link>
+            <router-link :to="{name: 'Historico', query:{id: conta.id_conta}}"><li><font-awesome-icon icon="fa-solid fa-clock-rotate-left" />&nbsp;&nbsp;&nbsp;Histórico</li></router-link>
+            <router-link :to="{name: 'Carros', query:{id: conta.id_conta}}"><li><font-awesome-icon icon="fa-solid fa-car" />&nbsp;&nbsp;&nbsp;Meus carros</li></router-link>
+            <router-link :to="{name: 'Configuracoes', query:{id: conta.id_conta}}"><li><font-awesome-icon icon="fa-solid fa-gear" />&nbsp;&nbsp;&nbsp;Configurações</li></router-link>
         </ul>
     </section>
 </template>
 
 <script>
     export default {
+        props: ['conta'],
         name: 'Menu',
     }
 </script>
