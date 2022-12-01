@@ -1,9 +1,9 @@
 <template>
     <div>
         <h1>Serviços</h1><br>
-        <p><button type="button" class="btn adicionar" @click="visualizar = !visualizar"><font-awesome-icon icon="fa-solid fa-eye" />&nbsp;&nbsp;&nbsp;Pre-visualização</button>&nbsp;&nbsp;&nbsp;<button type="button" class="btn adicionar" @click="edit = !edit"><font-awesome-icon icon="fa-solid fa-plus" />&nbsp;&nbsp;&nbsp;Adicionar Serviço</button></p>
+        <p><button type="button" class="btn adicionar" @click="visualizar = !visualizar"><font-awesome-icon icon="fa-solid fa-eye" />&nbsp;&nbsp;&nbsp;Pre-visualização</button>&nbsp;&nbsp;&nbsp;<button type="button" class="btn adicionar" @click="(cadastrar = !cadastrar)"><font-awesome-icon icon="fa-solid fa-plus" />&nbsp;&nbsp;&nbsp;Adicionar Serviço</button></p>
         <br>
-        <div class="card" v-for="servico in servicos" :key="servico.title">
+        <div class="card" v-for="servico in servicos" :key="servico.id_servico">
             <div class="row">
                 <div class="col-md-9">
                     <div class="row d-flex align-items-center">
@@ -11,45 +11,43 @@
                             <img src="../../../public/imagem/manutencao.png" alt="">
                         </div>
                         <div class="col-md-8">
-                            <h2>{{ servico.title }}</h2>
+                            <h2>{{servico.nome}}</h2>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3 text-end">
-                    <button type="button" class="btn editar" @click="edit = !edit"><font-awesome-icon icon="fa-solid fa-pen" /></button>
+                    <button type="button" class="btn editar" @click="excluir(servico.id_servico)"><font-awesome-icon icon="fa-solid fa-trash" /></button>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="modal" tabindex="-1" v-show="edit">
+    <div class="modal" tabindex="-1" v-show="cadastrar">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"
-                        @click="edit = !edit"></button>
+                        @click="(cadastrar = !cadastrar)"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
-                        <form>
-                            <div class="input-group mb-3">
-                                <label class="input-group-text" for="inputGroupFile01">Upload</label>
-                                <input type="file" class="form-control" id="inputGroupFile01">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Nome do Serviço</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Descrição</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
-                            </div>
-                            <div class="text-end">
-                                <button type="submit" class="btn adicionar"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;&nbsp;&nbsp;Salvar</button>
-                            </div>
-                        </form>
-                    </form>
+                    <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Imagem</label>
+                            <input type="file" @change="uploadimage" ref="file" class="form-control" id="inputGroupFile01">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Nome do Serviço</label>
+                            <input type="text" class="form-control" id="email" v-model="nome_servico" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Preço</label>
+                            <input type="text" class="form-control" id="preco" v-model="preco_servico">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Descrição</label>
+                            <textarea class="form-control" id="descricao" v-model="descricao_servico" rows="2"></textarea>
+                        </div>
+                        <div class="text-end">
+                        <button @click="salvar" class="btn adicionar"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;&nbsp;&nbsp;Salvar</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -64,90 +62,13 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-3" v-for="servico in servicos" :key="servico.id_servico">
                             <div class="imagem">
-                                <img src="../../../public/imagem/servicos/servico_1.png" alt="">
+                                <img v-bind:src="link + servico.imagem" alt="">
                                 <div class="sobre text-center">
-                                    <h4>Troca de oleo</h4>
+                                    <h4>{{servico.nome}}</h4>
                                     <hr>
-                                    <p>A média de intervalo entre as trocas é de 10.000 km ou 12 meses de uso</p>
-                                    <button type="button" class="btn btn-blacktransparent">Contratar</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="imagem">
-                                <img src="../../../public/imagem/servicos/servico_1.png" alt="">
-                                <div class="sobre text-center">
-                                    <h4>Troca de oleo</h4>
-                                    <hr>
-                                    <p>A média de intervalo entre as trocas é de 10.000 km ou 12 meses de uso</p>
-                                    <button type="button" class="btn btn-blacktransparent">Contratar</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="imagem">
-                                <img src="../../../public/imagem/servicos/servico_1.png" alt="">
-                                <div class="sobre text-center">
-                                    <h4>Troca de oleo</h4>
-                                    <hr>
-                                    <p>A média de intervalo entre as trocas é de 10.000 km ou 12 meses de uso</p>
-                                    <button type="button" class="btn btn-blacktransparent">Contratar</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="imagem">
-                                <img src="../../../public/imagem/servicos/servico_1.png" alt="">
-                                <div class="sobre text-center">
-                                    <h4>Troca de oleo</h4>
-                                    <hr>
-                                    <p>A média de intervalo entre as trocas é de 10.000 km ou 12 meses de uso</p>
-                                    <button type="button" class="btn btn-blacktransparent">Contratar</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="imagem">
-                                <img src="../../../public/imagem/servicos/servico_1.png" alt="">
-                                <div class="sobre text-center">
-                                    <h4>Troca de oleo</h4>
-                                    <hr>
-                                    <p>A média de intervalo entre as trocas é de 10.000 km ou 12 meses de uso</p>
-                                    <button type="button" class="btn btn-blacktransparent">Contratar</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="imagem">
-                                <img src="../../../public/imagem/servicos/servico_1.png" alt="">
-                                <div class="sobre text-center">
-                                    <h4>Troca de oleo</h4>
-                                    <hr>
-                                    <p>A média de intervalo entre as trocas é de 10.000 km ou 12 meses de uso</p>
-                                    <button type="button" class="btn btn-blacktransparent">Contratar</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="imagem">
-                                <img src="../../../public/imagem/servicos/servico_1.png" alt="">
-                                <div class="sobre text-center">
-                                    <h4>Troca de oleo</h4>
-                                    <hr>
-                                    <p>A média de intervalo entre as trocas é de 10.000 km ou 12 meses de uso</p>
-                                    <button type="button" class="btn btn-blacktransparent">Contratar</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="imagem">
-                                <img src="../../../public/imagem/servicos/servico_1.png" alt="">
-                                <div class="sobre text-center">
-                                    <h4>Troca de oleo</h4>
-                                    <hr>
-                                    <p>A média de intervalo entre as trocas é de 10.000 km ou 12 meses de uso</p>
+                                    <p class="block-with-text">{{servico.descricao}}</p>
                                     <button type="button" class="btn btn-blacktransparent">Contratar</button>
                                 </div>
                             </div>
@@ -160,20 +81,59 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
     name: 'Emails',
     data() {
         return {
-            edit: false,
+            link: "http://10.0.0.176:3000/img/",
+            servicos: [],
+            delete: [],
+            imagem: "",
+            cadastrar: false,
             visualizar: false,
-            servicos: [
-                { title: 'Troca de óleo' },
-                { title: 'Alinhamento' },
-                { title: 'Troca embreagem' },
-                { title: 'Troca bicos injetores' },
-            ]
+            edit: false,
+            nome_servico: "",
+            preco_servico: "",
+            descricao_servico: "",
         }
     },
+    created(){
+        this.post();
+    },
+    methods: {
+        async post(){
+            await axios.get("http://10.0.0.176:3000/servicos").then(response => this.servicos = response.data).catch(error => console.log(error))
+        },
+        uploadimage(){
+            this.imagem = this.$refs.file.files[0];
+        },
+        async salvar() {
+            const form = new FormData();
+            form.append('imagem', this.imagem);
+            form.append('nome', this.nome_servico);
+            form.append('valor', this.preco_servico);
+            form.append('descricao', this.descricao_servico);
+            const response = await axios({
+                method: 'post',
+                url: 'http://10.0.0.176:3000/servicos',
+                data: form,
+                headers: {
+                    'Content-Type': `multipart/form-data; boundary=${form._boundary}`,
+                },
+            })
+            this.imagem = "",
+            this.nome_servico = "",
+            this.preco_servico = "",
+            this.descricao_servico = "",
+            this.post();
+            this.cadastrar = false;
+        },
+        async excluir(id_servico){
+            await axios.delete("http://10.0.0.176:3000/servicos/" + id_servico).then(response => this.delete = response.data).catch(error => console.log(error))
+            this.post();
+        }
+    }
 }
 </script>
 
@@ -274,5 +234,27 @@ export default {
 
 .img img {
     width: 80px;
+}
+.block-with-text {
+  overflow: hidden;
+  position: relative; 
+  line-height: 1.2em;
+  max-height: 3.6em; 
+  text-align: justify;  
+  margin-right: -1em;
+  padding-right: 1em;
+}.block-with-text:before {
+  content: '...';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}.block-with-text:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 1em;
+  height: 1em;
+  margin-top: 0.2em;
+  background: white;
 }
 </style>

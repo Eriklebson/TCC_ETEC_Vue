@@ -26,156 +26,13 @@
       <div class="container">
         <h1 class="text-center">Confira todos os serviços do Paiva</h1>
         <div class="row justify-content-around servicos">
-          <div class="col-md-3 caixa">
+          <div class="col-md-3 caixa" v-for="servico in servicos" :key="servico.id_servico">
             <!--Primeiro caixa -->
             <figure class="config-agenda">
-              <img
-                class="class-img"
-                src="../../public/imagem/servicos/servico_1.png"
-              />
+              <img class="class-img" :src="(link + servico.imagem)"/>
               <div class="sumiu">
-                <h3 class="tf text-center">Troca de óleo</h3>
-                <p class="">
-                  A média de intervalo entre as trocas de 10.000 km ou 12 meses
-                  de uso
-                </p>
-
-                <button class="btn btn-dark btn-servicos">Contratar</button>
-              </div>
-            </figure>
-          </div>
-
-          <div class="col-md-3 caixa">
-            <!--Segundo caixa -->
-            <figure class="config-agenda">
-              <img
-                class="class-img"
-                src="../../public/imagem/servicos/servico_2.png"
-              />
-              <div class="sumiu">
-                <h3 class="tf text-center">Troca de óleo</h3>
-                <p class="">
-                  A média de intervalo entre as trocas de 10.000 km ou 12 meses
-                  de uso
-                </p>
-
-                <button class="btn btn-dark btn-servicos">Contratar</button>
-              </div>
-            </figure>
-          </div>
-
-          <div class="col-md-3 caixa">
-            <!--Terceira caixa -->
-            <figure class="config-agenda">
-              <img
-                class="class-img"
-                src="../../public/imagem/servicos/servico_3.png"
-              />
-              <div class="sumiu">
-                <h3 class="tf text-center">Troca de óleo</h3>
-                <p class="">
-                  A média de intervalo entre as trocas de 10.000 km ou 12 meses
-                  de uso
-                </p>
-
-                <button class="btn btn-dark btn-servicos">Contratar</button>
-              </div>
-            </figure>
-          </div>
-
-          <div class="col-md-3 caixa">
-            <!--Quarto caixa -->
-            <figure class="config-agenda">
-              <img
-                class="class-img"
-                src="../../public/imagem/servicos/servico_4.png"
-              />
-              <div class="sumiu">
-                <h3 class="tf text-center">Troca de óleo</h3>
-                <p class="">
-                  A média de intervalo entre as trocas de 10.000 km ou 12 meses
-                  de uso
-                </p>
-
-                <button class="btn btn-dark btn-servicos">Contratar</button>
-              </div>
-            </figure>
-          </div>
-        </div>
-        <!-- Ínicio da seção Agenda -->
-
-        <div class="row justify-content-around servicos">
-          <div class="col-md-3 caixa">
-            <!--Primeiro caixa -->
-            <figure class="config-agenda">
-              <img
-                class="class-img"
-                src="../../public/imagem/servicos/servico_1.png"
-              />
-              <div class="sumiu">
-                <h3 class="tf text-center">Troca de óleo</h3>
-                <p class="">
-                  A média de intervalo entre as trocas de 10.000 km ou 12 meses
-                  de uso
-                </p>
-
-                <button class="btn btn-dark btn-servicos">Contratar</button>
-              </div>
-            </figure>
-          </div>
-
-          <div class="col-md-3 caixa">
-            <!--Segundo caixa -->
-            <figure class="config-agenda">
-              <img
-                class="class-img"
-                src="../../public/imagem/servicos/servico_2.png"
-              />
-              <div class="sumiu">
-                <h3 class="tf text-center">Troca de óleo</h3>
-                <p class="">
-                  A média de intervalo entre as trocas de 10.000 km ou 12 meses
-                  de uso
-                </p>
-
-                <button class="btn btn-dark btn-servicos">Contratar</button>
-              </div>
-            </figure>
-          </div>
-
-          <div class="col-md-3 caixa">
-            <!--Terceira caixa -->
-            <figure class="config-agenda">
-              <img
-                class="class-img"
-                src="../../public/imagem/servicos/servico_3.png"
-              />
-              <div class="sumiu">
-                <h3 class="tf text-center">Troca de óleo</h3>
-                <p class="">
-                  A média de intervalo entre as trocas de 10.000 km ou 12 meses
-                  de uso
-                </p>
-
-                <button class="btn btn-dark btn-servicos">Contratar</button>
-              </div>
-            </figure>
-          </div>
-
-          <div class="col-md-3 caixa">
-            <!--Quarto caixa -->
-            <figure class="config-agenda">
-              <img
-                class="class-img"
-                src="../../public/imagem/servicos/servico_4.png"
-              />
-              <div class="sumiu">
-                <h3 class="tf text-center">Troca de óleo</h3>
-                <p class="">
-                  A média de intervalo entre as trocas de 10.000 km ou 12 meses
-                  de uso
-                </p>
-
+                <h3 class="tf text-center">{{servico.nome}}</h3>
+                <p class="text-center block-with-text">{{servico.descricao}}</p>
                 <button class="btn btn-dark btn-servicos">Contratar</button>
               </div>
             </figure>
@@ -298,6 +155,7 @@
 
 <script>
 // @ is an alias to /src
+import axios from "axios";
 import Nav from "@/components/Nav.vue";
 import Footer from "@/components/Footer.vue";
 import Carousel from "@/components/Carousel.vue";
@@ -308,6 +166,15 @@ export default {
     Nav,
     Footer,
     Carousel,
+  },
+  data() {
+    return {
+      link: "http://10.0.0.176:3000/img/",
+      servicos: [],
+    }
+  },
+  async created(){
+    await axios.get("http://10.0.0.176:3000/servicos").then(response => this.servicos = response.data).catch(error => console.log(error))
   },
 };
 </script>
@@ -362,6 +229,7 @@ section,
   margin-top: 30px;
 }
 .caixa {
+  color: white;
   margin: 15px 0px;
   width: 273px;
   height: 330px;
@@ -371,7 +239,29 @@ section,
 .maps {
   margin-bottom: 40px;
 }
-
+.block-with-text {
+  overflow: hidden;
+  position: relative; 
+  line-height: 1.2em;
+  max-width: 100%;
+  max-height: 3.6em; 
+  text-align: justify;  
+  margin-right: -1em;
+  padding-right: 1em;
+}.block-with-text:before {
+  content: '...';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}.block-with-text:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 1em;
+  height: 1em;
+  margin-top: 0.2em;
+  background: white;
+}
 .caixa .sumiu {
   background: rgba(2, 0, 36, 0.466);
   background: linear-gradient(

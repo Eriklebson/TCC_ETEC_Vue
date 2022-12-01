@@ -18,6 +18,7 @@ const servicosController = require('../controllers/servicos-controller')
 
 router.get('/', servicosController.getServicos);
 router.get('/:id_servico', servicosController.getUmServicos);
-router.post('/', upload.single('img'), servicosController.postServicos);
+router.post('/', upload.single('imagem'), servicosController.postServicos);
+router.delete('/:id_servico' , servicosController.deleteServico);
 
 module.exports = router;
