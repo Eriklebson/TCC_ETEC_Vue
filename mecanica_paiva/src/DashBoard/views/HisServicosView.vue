@@ -26,7 +26,7 @@
                 <table class="table">
                     <thead class="table-light">
                         <tr>
-                            <th scope="col"><input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input"></th>
+                            <th scope="col"><input @click="selectAll" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input"></th>
                             <th scope="col">Data de serviço</th>
                             <th scope="col">Cliente</th>
                             <th scope="col">Telefone</th>
@@ -35,7 +35,7 @@
                     </thead>
                     <tbody class="table-group-divider">
                         <tr class="itens" @click="itens = !itens">
-                            <th scope="row"><input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input"></th>
+                            <th scope="row"><input :checked="select" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input"></th>
                             <td>24/10/2021</td>
                             <td>Julia Alencar</td>
                             <td>X XXXX-XXXX</td>
@@ -69,8 +69,19 @@
         data(){
             return{
                 itens: false,
+                select: false,
             }
         },
+        methods:{
+            selectAll(){
+                if(this.select == true){
+                    this.select = false
+                }
+                else {
+                    this.select = true
+                }
+            }
+        }
     }
 </script>
 
