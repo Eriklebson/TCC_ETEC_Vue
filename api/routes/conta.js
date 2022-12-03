@@ -20,6 +20,7 @@ router.get('/', ContaController.getConta);
 router.get('/:id_conta', ContaController.getUmaConta);
 router.post('/', ContaController.postConta);
 router.post('/autenticacao', ContaController.postAutenticacao);
+router.patch('/editPermision/:id_conta', ContaController.patchEditPermision);
 
 
 module.exports = router;

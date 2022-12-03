@@ -21,13 +21,14 @@
                             <td>{{usuario.nome}}</td>
                             <td>{{usuario.email}}</td>
                             <td>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option value="1" :selected="(usuario.tipo_conta == 1)">Administrador</option>
-                                    <option value="2" :selected="(usuario.tipo_conta == 2)">Funcionario</option>
-                                    <option value="3" :selected="(usuario.tipo_conta == 3)">Cliente</option>
-                                </select>
+                                <p v-show="(usuario.tipo_conta == 1)">Administrador</p>
+                                <p v-show="(usuario.tipo_conta == 2)">Funcionario</p>
+                                <p v-show="(usuario.tipo_conta == 3)">Cliente</p>
                             </td>
-                            <td><button type="button" class="btn refrash"><font-awesome-icon icon="fa-solid fa-trash" /></button></td>
+                            <td>
+                                <router-link :to="{name: 'EditUsuario', query:{id: usuario.id_conta}}" type="button" class="btn refrash"><font-awesome-icon icon="fa-solid fa-pen" /></router-link>
+                                <button type="button" class="btn refrash"><font-awesome-icon icon="fa-solid fa-trash" /></button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

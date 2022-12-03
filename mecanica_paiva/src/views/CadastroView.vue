@@ -91,7 +91,7 @@ export default {
     async cadastrar(){
       const headers = {"Content-Type" : "application/json"}
       const body = JSON.stringify({
-          tipo_conta: "1",
+          tipo_conta: "3",
           nome: this.input_nome,
           email: this.input_email,
           senha: this.input_senha,

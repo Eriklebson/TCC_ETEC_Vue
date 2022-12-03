@@ -28,7 +28,7 @@
 <style scoped>
     .menu{
         background-color: #FAFAFA;
-        height: 89vh;
+        height: 100%;
     }
     .menu h3{
         padding: 20px;     

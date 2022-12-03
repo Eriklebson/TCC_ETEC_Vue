@@ -5,6 +5,7 @@ import About from '../views/AboutView.vue';
 import Cadastro from '../views/CadastroView.vue'
 import DashBoard from '../DashBoard/DashBoardView.vue';
 import Usuarios from '../DashBoard/views/UsuariosView.vue';
+import EditUsuario from '../DashBoard/views/EditUsuarioView.vue'
 import Servicos from '../DashBoard/views/ServicosView.vue';
 import hisServicos from '../DashBoard/views/HisServicosView.vue';
 import ServicosAbertos from '../DashBoard/views/ServicosAbertosView.vue';
@@ -48,6 +49,11 @@ const routes = [
         path: '/DashBoard/Usuarios',
         name: 'Usuarios',
         component: Usuarios,
+      },
+      {
+        path: '/DashBoard/EditUsuario',
+        name: 'EditUsuario',
+        component: EditUsuario
       },
       {
         path: '/DashBoard/Servicos',

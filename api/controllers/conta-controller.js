@@ -88,3 +88,19 @@ exports.postAutenticacao = (req, res, next)=>{
         })
     });
 };
+exports.patchEditPermision = (req, res, next) => {
+    mysql.getConnection((error, conn) => {
+        if(error){return res.status(500).send({error: error})}
+        conn.query(
+            `UPDATE conta_site SET tipo_conta = ? WHERE id_conta = 2;`,
+            [req.body.tipo_conta, req.params.id_conta],
+            (error, resultado, field) => {
+                conn.release();
+                if(error){return res.status(202).send({error: error})}
+                res.status(201).send({
+                    mensagem: 'Alteração feita com sucesso',
+                })
+            }
+        )
+    })
+};
