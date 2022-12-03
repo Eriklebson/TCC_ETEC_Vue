@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Servicos em andamento</h1><br>
+        <h1>Serviços em andamento</h1><br>
         <div class="row justify-content-between">
             <div class="col-md-3">
                 <div class="row">

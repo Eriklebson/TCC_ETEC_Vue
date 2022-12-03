@@ -33,7 +33,6 @@ exports.getUmServicos = (req, res, next)=>{
     })
 };
 exports.postServicos = (req, res, next)=>{
-    console.log(req.file);
     mysql.getConnection((error, conn) => {
         if(error){return res.status(500).send({error: error})}
         conn.query(
@@ -50,7 +49,6 @@ exports.postServicos = (req, res, next)=>{
     })
 };
 exports.deleteServico = (req, res, next)=>{
-    console.log(req.file);
     mysql.getConnection((error, conn) => {
         if(error){return res.status(500).send({error: error})}
         conn.query(

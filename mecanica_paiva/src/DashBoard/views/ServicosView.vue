@@ -30,22 +30,22 @@
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Imagem</label>
-                            <input type="file" @change="uploadimage" ref="file" class="form-control" id="inputGroupFile01">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Nome do Serviço</label>
-                            <input type="text" class="form-control" id="email" v-model="nome_servico" aria-describedby="emailHelp">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Preço</label>
-                            <input type="text" v-maska="['R$ #.##','R$ ##.##', 'R$ ###.##', 'R$ ####.##']" class="form-control" id="preco" v-model="preco_servico">
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Descrição</label>
-                            <textarea class="form-control" id="descricao" v-model="descricao_servico" rows="2"></textarea>
-                        </div>
-                        <div class="text-end">
+                        <label for="exampleInputEmail1" class="form-label">Imagem</label>
+                        <input type="file" @change="uploadimage" ref="file" class="form-control" id="inputGroupFile01">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Nome do Serviço</label>
+                        <input type="text" class="form-control" id="email" v-model="nome_servico" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Preço</label>
+                        <input type="text" v-maska="['R$ #.##','R$ ##.##', 'R$ ###.##', 'R$ ####.##']" class="form-control" id="preco" v-model="preco_servico">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Descrição</label>
+                        <textarea class="form-control" id="descricao" v-model="descricao_servico" rows="2"></textarea>
+                    </div>
+                    <div class="text-end">
                         <button @click="salvar" class="btn adicionar"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;&nbsp;&nbsp;Salvar</button>
                     </div>
                 </div>
@@ -101,10 +101,10 @@ export default {
         }
     },
     created(){
-        this.post();
+        this.get();
     },
     methods: {
-        async post(){
+        async get(){
             await axios.get("http://localhost:3000/servicos").then(response => this.servicos = response.data).catch(error => console.log(error))
         },
         uploadimage(){
