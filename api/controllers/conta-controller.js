@@ -70,16 +70,16 @@ exports.postAutenticacao = (req, res, next)=>{
                 return res.status(200).send({
                     mensagem: 'Autenticado com sucesso', 
                     autenticado: true, 
-                    id_conta: resultado[0].id_conta,
-                    tipo_conta: resultado[0].tipo_conta,
-                    nome: resultado[0].nome,
-                    email: resultado[0].email,
-                    senha: resultado[0].senha,
-                    imagem: resultado[0].imagem,
-                    nascimento: resultado[0].nascimento,
-                    cpf: resultado[0].cpf,
-                    telefone: resultado[0].telefone,
-                    id_status: resultado[0].id_status,
+                    id_conta: results[0].id_conta,
+                    tipo_conta: results[0].tipo_conta,
+                    nome: results[0].nome,
+                    email: results[0].email,
+                    senha: results[0].senha,
+                    imagem: results[0].imagem,
+                    nascimento: results[0].nascimento,
+                    cpf: results[0].cpf,
+                    telefone: results[0].telefone,
+                    id_status: results[0].id_status,
                 })
             }
             else{

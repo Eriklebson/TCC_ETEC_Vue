@@ -39,7 +39,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Preço</label>
-                            <input type="text" class="form-control" id="preco" v-model="preco_servico">
+                            <input type="text" v-maska="['R$ #.##','R$ ##.##', 'R$ ###.##', 'R$ ####.##']" class="form-control" id="preco" v-model="preco_servico">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Descrição</label>
@@ -81,12 +81,14 @@
 </template>
 
 <script>
+import {maska} from 'maska';
 import axios from "axios";
 export default {
     name: 'Emails',
+    directives:{maska},
     data() {
         return {
-            link: "http://10.0.0.176:3000/img/",
+            link: "http://localhost:3000/img/servicos/",
             servicos: [],
             delete: [],
             imagem: "",
@@ -103,7 +105,7 @@ export default {
     },
     methods: {
         async post(){
-            await axios.get("http://10.0.0.176:3000/servicos").then(response => this.servicos = response.data).catch(error => console.log(error))
+            await axios.get("http://localhost:3000/servicos").then(response => this.servicos = response.data).catch(error => console.log(error))
         },
         uploadimage(){
             this.imagem = this.$refs.file.files[0];
@@ -116,7 +118,7 @@ export default {
             form.append('descricao', this.descricao_servico);
             const response = await axios({
                 method: 'post',
-                url: 'http://10.0.0.176:3000/servicos',
+                url: 'http://localhost:3000/servicos',
                 data: form,
                 headers: {
                     'Content-Type': `multipart/form-data; boundary=${form._boundary}`,
@@ -130,7 +132,7 @@ export default {
             this.cadastrar = false;
         },
         async excluir(id_servico){
-            await axios.delete("http://10.0.0.176:3000/servicos/" + id_servico).then(response => this.delete = response.data).catch(error => console.log(error))
+            await axios.delete("http://localhost:3000/servicos/" + id_servico).then(response => this.delete = response.data).catch(error => console.log(error))
             this.post();
         }
     }

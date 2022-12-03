@@ -4,7 +4,7 @@ const multer = require ('multer');
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb){
-        cb(null, 'img/')
+        cb(null, 'img/servicos/')
     },
     filename: function(req, file, cb){
         let ext = file.originalname.substring(file.originalname.lastIndexOf('.'), file.originalname.length);

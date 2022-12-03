@@ -12,7 +12,10 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto me-5">
               <li class="nav-item ms-3 pt-3 text-center">
-                <a class="nav-link text-white" href="#">Bem-Vindo, Erik</a>
+                <img class="perfil" :src="(link + conta.imagem)" alt="">
+              </li>
+              <li class="nav-item ms-3 pt-3 text-center">
+                <a class="nav-link text-white" href="#">Bem-Vindo, {{conta.nome}}</a>
               </li>
               <li class="nav-item ms-3 pt-3 fw-bold text-center">
                 <a class="nav-link text-white" href="#">Ajuda</a>
@@ -29,7 +32,13 @@
   
 <script>
   export default {
+    props: ['conta'],
     name: "Nav",
+    data() {
+    return {
+      link: "http://localhost:3000/img/usuario/",
+    }
+  },
   };
 </script>
   
@@ -38,7 +47,11 @@
 nav{
     background: #121D24;
 }
-  
+.perfil{
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+}
 /*Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) {  }
  

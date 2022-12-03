@@ -1,5 +1,5 @@
 <template>
-    <Nav />
+    <Nav :conta="conta"/>
     <div class="row">
         <div class="col-md-3 menu">
             <Menu :conta="conta"/>
@@ -32,11 +32,11 @@
                 this.$router.push("/")
             }
             else{
-                await axios.get("http://10.0.0.176:3000/contas/" + this.$route.query.id).then(response => this.conta = response.data).catch(error => console.log(error))
+                await axios.get("http://localhost:3000/contas/" + this.$route.query.id).then(response => this.conta = response.data).catch(error => console.log(error))
             }*/
 
             //remover essa linha quando tudo tiver pronto e habilitar a de cima
-            await axios.get("http://10.0.0.176:3000/contas/" + this.$route.query.id).then(response => this.conta = response.data).catch(error => console.log(error))
+            await axios.get("http://localhost:3000/contas/" + this.$route.query.id).then(response => this.conta = response.data).catch(error => console.log(error))
         }
     }
 </script>

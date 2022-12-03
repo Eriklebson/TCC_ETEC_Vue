@@ -7,7 +7,7 @@ import DashBoard from '../DashBoard/DashBoardView.vue';
 import Usuarios from '../DashBoard/views/UsuariosView.vue';
 import Servicos from '../DashBoard/views/ServicosView.vue';
 import hisServicos from '../DashBoard/views/HisServicosView.vue';
-import Clientes from '../DashBoard/views/ClientesView.vue';
+import ServicosAbertos from '../DashBoard/views/ServicosAbertosView.vue';
 import Gerenciar from '../DashBoard/views/GerenciarView.vue';
 import Configuracoes from '../DashBoard/views/ConfiguracoesView.vue';
 import Conta from '../DashBoard/views/ContaView.vue';
@@ -60,9 +60,9 @@ const routes = [
         component: hisServicos,
       },
       {
-        path: '/DashBoard/Clientes',
-        name: 'Clientes',
-        component: Clientes,
+        path: '/DashBoard/ServicosAbertos',
+        name: 'ServicosAbertos',
+        component: ServicosAbertos,
       },
       {
         path: '/DashBoard/Gerenciar',

@@ -24,7 +24,7 @@ exports.getUmServicos = (req, res, next)=>{
                     id_servico: resultado[0].id_servico,
                     imagem: resultado[0].imagem,
                     tipo: resultado[0].nome,
-                    tempo: resultado[0].valor,
+                    descricao: resultado[0].descricao,
                     valor: resultado[0].descricao,
                 }
                 return res.status(200).send(response)

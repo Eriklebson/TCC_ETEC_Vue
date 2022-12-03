@@ -47,7 +47,7 @@
             }
         },
         async created(){
-            await axios.get("http://10.0.0.176:3000/contas").then(response => this.usuarios = response.data).catch(error => console.log(error))
+            await axios.get("http://localhost:3000/contas").then(response => this.usuarios = response.data).catch(error => console.log(error))
         }
     }
 </script>

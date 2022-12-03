@@ -169,12 +169,12 @@ export default {
   },
   data() {
     return {
-      link: "http://10.0.0.176:3000/img/",
+      link: "http://localhost:3000/img/servicos/",
       servicos: [],
     }
   },
   async created(){
-    await axios.get("http://10.0.0.176:3000/servicos").then(response => this.servicos = response.data).catch(error => console.log(error))
+    await axios.get("http://localhost:3000/servicos").then(response => this.servicos = response.data).catch(error => console.log(error))
   },
 };
 </script>
