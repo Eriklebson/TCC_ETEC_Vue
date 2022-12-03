@@ -25,7 +25,6 @@ exports.getUmaOficina = (req, res, next)=>{
                     cnpj: resultado[0].cnpj,
                     nome: resultado[0].nome,
                     dono: resultado[0].dono,
-                    cep: resultado[0].cep,
                 }
                 return res.status(200).send(response)
             }
@@ -36,8 +35,8 @@ exports.postOficina = (req, res, next)=>{
     mysql.getConnection((error, conn) => {
         if(error){return res.status(500).send({error: error})}
         conn.query(
-            `insert into oficina (cnpj, nome, dono, cep) values (?, ?, ?, ?);`,
-            [req.body.cnpj ,req.body.nome, req.body.dono , req.body.cep],
+            `insert into oficina (cnpj, nome, dono, cep) values (?, ?, ?);`,
+            [req.body.cnpj ,req.body.nome, req.body.dono],
             (error, resultado, fields) => {
                 if(error){return res.status(500).send({error: error})}
                 res.status(201).send({

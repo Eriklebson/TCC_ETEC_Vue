@@ -2,7 +2,7 @@
     "env" : {
         "mysql_user" : "root" ,
         "mysql_password" : "",
-        "mysql_database" : "tcc_main",
+        "mysql_database" : "tcc_maintemplate",
         "mysql_host" : "localhost",
         "mysql_port" : 3306
     }

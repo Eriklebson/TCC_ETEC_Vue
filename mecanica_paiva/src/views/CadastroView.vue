@@ -10,10 +10,24 @@
               <input type="email" placeholder="Seu E-mail" class="form-control" id="exampleInputEmail1" v-model="input_email" aria-describedby="emailHelp" required/>
               <img class="img-1" src="../../public/imagem/login/EnvelopeSimple.png" alt="" />
             </div>
-
             <!--Seu Nome -->
             <div class="mb-1">
               <input type="text" placeholder="Seu nome" class="form-control" id="exampleInputUser2" v-model="input_nome" aria-describedby="emailHelp" required/>
+              <img class="img-1" src="../../public/imagem/cadastro/User.png" alt="" />
+            </div>
+            <!--Seu nascimento -->
+            <div class="mb-1">
+              <input type="date" placeholder="Data de nascimento" class="form-control" id="exampleInputUser2" v-model="input_nascimento" aria-describedby="emailHelp" required/>
+              <img class="img-1" src="../../public/imagem/cadastro/User.png" alt="" />
+            </div>
+            <!--Seu cpf -->
+            <div class="mb-1">
+              <input type="text" v-maska="'###.###.###-##'" placeholder="CPF" class="form-control" id="exampleInputUser2" v-model="input_cpf" aria-describedby="emailHelp" required/>
+              <img class="img-1" src="../../public/imagem/cadastro/User.png" alt="" />
+            </div>
+            <!--Seu telefone -->
+            <div class="mb-1">
+              <input type="text" v-maska="'(##) # ####-####'" placeholder="Telefone" class="form-control" id="exampleInputUser2" v-model="input_telefone" aria-describedby="emailHelp" required/>
               <img class="img-1" src="../../public/imagem/cadastro/User.png" alt="" />
             </div>
             <!--Sua senha -->
@@ -21,7 +35,6 @@
               <input type="password" placeholder="Sua Senha" class="form-control" id="exampleInputPassword1" v-model="input_senha" aria-describedby="emailHelp" required/>
               <img class="img-1" src="../../public/imagem/login/LockKey.png" alt="" />
             </div>
-
             <!--Confirme sua senha -->
             <div class="mb-1">
               <input placeholder="Confirme sua senha" type="password" class="form-control" id="exampleInputPassword2" v-model="input_confirmSenha" required/>
@@ -58,13 +71,18 @@
 </template>
 
 <script>
+import {maska} from 'maska';
 import axios from "axios";
 export default {
   name: "Cadastro",
+  directives:{maska},
   data(){
     return{
       input_email: "",
       input_nome: "",
+      input_nascimento: "",
+      input_cpf: "",
+      input_telefone: "",
       input_senha: "",
       input_confirmSenha: ""
     }
@@ -77,12 +95,14 @@ export default {
           nome: this.input_nome,
           email: this.input_email,
           senha: this.input_senha,
+          imagem: 'perfil.png',
+          nascimento: this.input_nascimento,
+          cpf: this.input_cpf,
+          telefone: this.input_telefone,
           id_status: null,
-          id_dono: null,
-          id_funcionario: null,
       })
       if(this.input_senha == this.input_confirmSenha){
-        await axios.post("http://10.0.0.176:3000/contas", body, {headers}).then(response => console.log(response)).catch(error => console.log(error))
+        await axios.post("http://localhost:3000/contas", body, {headers}).then(response => console.log(response)).catch(error => console.log(error))
         alert("Conta criada");
         this.$router.push("/login")
       }

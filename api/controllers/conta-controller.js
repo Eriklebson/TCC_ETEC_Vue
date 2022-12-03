@@ -29,9 +29,11 @@ exports.getUmaConta = (req, res, next)=>{
                     nome: resultado[0].nome,
                     email: resultado[0].email,
                     senha: resultado[0].senha,
+                    imagem: resultado[0].imagem,
+                    nascimento: resultado[0].nascimento,
+                    cpf: resultado[0].cpf,
+                    telefone: resultado[0].telefone,
                     id_status: resultado[0].id_status,
-                    id_dono: resultado[0].id_dono,
-                    id_funcionario: resultado[0].id_funcionario,
                 }
                 return res.status(200).send(response)
             }
@@ -42,8 +44,8 @@ exports.postConta = (req, res, next)=>{
     mysql.getConnection((error, conn) => {
         if(error){return res.status(500).send({error: error})}
         conn.query(
-            `insert into conta_site (tipo_conta, nome, email, senha, id_status, id_dono, id_funcionario) values (?, ?, ?, ?, ?, ?, ?);`,
-            [req.body.tipo_conta, req.body.nome, req.body.email, md5(req.body.senha), req.body.id_status, req.body.id_dono, req.body.id_funcionario],
+            `insert into conta_site (tipo_conta, nome, email, senha, imagem, nascimento, cpf, telefone, id_status) values (?, ?, ?, ?, ?, ?, ?, ?, ?);`,
+            [req.body.tipo_conta, req.body.nome, req.body.email, md5(req.body.senha), req.body.imagem, req.body.nascimento, req.body.cpf, req.body.telefone, req.body.id_status],
             (error, resultado, fields) => {
                 if(error){return res.status(500).send({error: error})}
                 res.status(201).send({
@@ -68,14 +70,16 @@ exports.postAutenticacao = (req, res, next)=>{
                 return res.status(200).send({
                     mensagem: 'Autenticado com sucesso', 
                     autenticado: true, 
-                    id_conta: results[0].id_conta,
-                    tipo_conta: results[0].tipo_conta,
-                    nome: results[0].nome,
-                    email: results[0].email,
-                    senha: results[0].senha,
-                    id_status: results[0].id_status,
-                    id_dono: results[0].id_dono,
-                    id_funcionario: results[0].id_funcionario,
+                    id_conta: resultado[0].id_conta,
+                    tipo_conta: resultado[0].tipo_conta,
+                    nome: resultado[0].nome,
+                    email: resultado[0].email,
+                    senha: resultado[0].senha,
+                    imagem: resultado[0].imagem,
+                    nascimento: resultado[0].nascimento,
+                    cpf: resultado[0].cpf,
+                    telefone: resultado[0].telefone,
+                    id_status: resultado[0].id_status,
                 })
             }
             else{
