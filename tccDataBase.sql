@@ -1,48 +1,48 @@
-	create database TCC_MainTemplate;
+create database TCC_MainTemplate;
 	use TCC_MainTemplate;
+
+CREATE TABLE cidade (
+  id_cidade int(11) NOT NULL AUTO_INCREMENT,
+  descricao varchar(100) DEFAULT NULL,
+  uf varchar(2) DEFAULT NULL,
+  codigo_ibge int(11) DEFAULT NULL,
+  ddd varchar(2) DEFAULT NULL,
+  PRIMARY KEY (id_cidade),
+  KEY id (id_cidade) USING BTREE,
+  KEY cidade (id_cidade,uf) USING BTREE,
+  KEY cidade_estado (uf) USING BTREE
+);
     
-    CREATE TABLE Regiao (
-		Id INT NOT NULL AUTO_INCREMENT,
-		Nome VARCHAR(255) NOT NULL,
-		PRIMARY KEY (Id)
-		);
-        
-	CREATE TABLE Municipio (
-		Id  INT NOT NULL AUTO_INCREMENT,
-		Codigo INT NOT NULL,
-		Nome  VARCHAR(255) NOT NULL,
-		Uf CHAR(2) NOT NULL,
-		PRIMARY KEY (Id)
-		);
-        
-	CREATE TABLE Estado (
-		Id  INT NOT NULL AUTO_INCREMENT,
-		CodigoUf INT NOT NULL,
-		Nome VARCHAR(255) NOT NULL,
-		Uf CHAR(2) NOT NULL,
-		Regiao INT NOT NULL,
-		PRIMARY KEY (Id)
-		);
-        
-	CREATE TABLE Bairro (
-		Id  INT NOT NULL AUTO_INCREMENT,
-		Codigo CHAR(10)	NOT NULL,
-		Nome VARCHAR(255) NOT NULL,
-		Uf CHAR(2) NOT NULL,
-		PRIMARY KEY (Id)
-		);
+CREATE TABLE logradouro (
+  CEP varchar(11) NOT NULL,
+  id_logradouro int(10) unsigned NOT NULL AUTO_INCREMENT,
+  tipo varchar(50) DEFAULT NULL,
+  descricao varchar(100) NOT NULL,
+  id_cidade int(11) NOT NULL,
+  UF varchar(2) NOT NULL,
+  complemento varchar(100) DEFAULT NULL,
+  descricao_sem_numero varchar(100) DEFAULT NULL,
+  descricao_cidade varchar(100) DEFAULT NULL,
+  codigo_cidade_ibge int(11) DEFAULT NULL,
+  descricao_bairro varchar(100) DEFAULT NULL,
+  PRIMARY KEY (id_logradouro),
+  KEY cep (CEP) USING BTREE,
+  KEY cidade (id_cidade,UF) USING BTREE,
+  CONSTRAINT FK_cidade_2 FOREIGN KEY (id_cidade) REFERENCES cidade (id_cidade)
+);
         
         create table endereco(
-	id_endereco integer auto_increment PRIMARY KEY,
-    id_regiao integer,
-    id_municipio integer,
-    id_estado integer,
-    id_bairro integer,
-    foreign key (id_regiao) references Regiao(Id),
-    foreign key (id_municipio) references Municipio(Id) ,
-    foreign key (id_estado) references Estado(Id),
-    foreign key (id_bairro) references Bairro(Id)
-	);
+id_endereco int not null auto_increment,
+numero int not null,
+complemento varchar(255) not null,
+id_cidade int not null,
+id_logradouro int unsigned not null,
+id_conta int not null,
+primary key(id_endereco),
+foreign key(id_cidade) references cidade(id_cidade),
+foreign key(id_logradouro) references logradouro(id_logradouro),
+foreign key(id_conta) references conta_site(id_conta)
+);
     
 		create table oficina(
 	id_oficina integer auto_increment PRIMARY KEY,
@@ -59,8 +59,8 @@
     imagem varchar(255) not null,
     nome varchar(255) not null,
 	nascimento datetime not null,
-	cpf varchar(255) not null,
-	telefone varchar(255) not null,
+	cpf varchar(255) not null unique,
+	telefone varchar(255) not null unique,
     id_status integer,
 	foreign key (id_status) references status_veiculo(id_status)
 	);
@@ -70,6 +70,7 @@
 	data_abertura datetime not null,
 	previsao_entrega datetime,
     files varchar(255) null,
+    ordem_status varchar(255) not null,
 	id_veiculo integer,
 	id_servico integer,
     id_conta integer,
@@ -80,8 +81,8 @@
     
 		create table servicos(
 	id_servico integer auto_increment PRIMARY KEY,
-	nome_servico varchar(255) not null,
-	tempo datetime not null,
+	nome varchar(255) not null,
+	tempo text not null,
 	valor decimal (7,2) not null
 	);
     
@@ -121,10 +122,3 @@
 	valor_max_aceito decimal(3,1) not null,
 	valor_contado decimal(3,1) not null
 	);
-    
-    
-
-    
-    
-    
-    
