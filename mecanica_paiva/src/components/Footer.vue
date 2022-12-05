@@ -12,7 +12,7 @@
           <span>Tel: (11)-3423-1215</span>
           <p>
             <a href="" class="me-2 mt-1 text-white"><font-awesome-icon icon="fa-solid fa-envelope" /></a>
-            <span>Contato@cupix.com.br</span>
+            <span>Contato@Contato.com.br</span>
           </p>
 
           <p>
@@ -27,7 +27,10 @@
         <div class="col-md-4">
           <ul class="navbar-nav">
             <h3>Responsável Técnico</h3>
-            <li>> Erik Curioso</li>
+            <li>Eriklebson</li>
+            <li>Jefferson</li>
+            <li>Sanches</li>
+            <li>Wesley</li>
           </ul>
         </div>
 
@@ -35,9 +38,9 @@
           <h3>Entre em contato</h3>
 
           <ul class="navbar-nav">
-           <li class="mt-2">> Segunda: Sexta 8:00 - 18:00</li>
-            <li class="mt-2">> Sábado: 8:00 - 12:00</li>
-            <li class="mt-2">> Fechado para Almoço 12:00 - 13:00</li>
+           <li class="mt-2">Segunda: Sexta 8:00 - 18:00</li>
+            <li class="mt-2">Sábado: 8:00 - 12:00</li>
+            <li class="mt-2">Fechado para Almoço 12:00 - 13:00</li>
           </ul>
         </div>
       </div>

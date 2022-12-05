@@ -6,7 +6,6 @@
                 <table class="table">
                     <thead class="table-light">
                         <tr>
-                            <th scope="col"><input @click="selectAll" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input"></th>
                             <th scope="col">ID</th>
                             <th scope="col">Cliente</th>
                             <th scope="col">Email</th>
@@ -16,7 +15,6 @@
                     </thead>
                     <tbody class="table-group-divider">
                         <tr class="itens" v-for="usuario in usuarios" :key="usuario.id_conta" @click="itens = !itens">
-                            <th scope="row"><input :checked="select" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input"></th>
                             <td>{{usuario.id_conta}}</td>
                             <td>{{usuario.nome}}</td>
                             <td>{{usuario.email}}</td>
@@ -27,7 +25,6 @@
                             </td>
                             <td>
                                 <router-link :to="{name: 'EditUsuario', query:{id: usuario.id_conta}}" type="button" class="btn refrash"><font-awesome-icon icon="fa-solid fa-pen" /></router-link>
-                                <button type="button" class="btn refrash"><font-awesome-icon icon="fa-solid fa-trash" /></button>
                             </td>
                         </tr>
                     </tbody>
