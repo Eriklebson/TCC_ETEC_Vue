@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Contratar serviço {{servico.nome_servico}}</h1><br>
+        <h1>Descrição do serviço em andamento</h1><br>
         <div class="card" >
             <h4>Do serviço</h4><br>
             <h5 for="exampleInputEmail1" class="form-label">Serviço:</h5>
@@ -9,31 +9,8 @@
             <p>{{servico.valor}}</p><br>
             <h5 for="exampleInputEmail1" class="form-label">Descrição:</h5>
             <p>{{servico.descricao}}</p><br>
-            <div class="row">
-                <div class="col-md-4">
-                    <h5 for="exampleInputEmail1" class="form-label">Dia:</h5>
-                    <input type="date" class="form-control" :min="dataatual" id="exampleInputEmail1" aria-describedby="emailHelp" v-model="dia"><br>
-                </div>
-                <div class="col-md-4">
-                    <h5 for="exampleInputEmail1" class="form-label">Horario:</h5>
-                    <select v-model="hora" class="form-select" aria-label="Default select example">
-                        <option value="07:00:00" selected>07:00</option>
-                        <option value="09:00:00">09:00</option>
-                        <option value="11:00:00">11:00</option>
-                        <option value="14:00:00">14:00</option>
-                        <option value="16:00:00">16:00</option>
-                        <option value="18:00:00">18:00</option>
-                        <option value="20:00:00">20:00</option>
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <h5 for="exampleInputEmail1" class="form-label">Veiculo:</h5>
-                    <select v-model="veiculo" class="form-select" aria-label="Default select example">
-                        <option v-for="veiculo in veiculos" :key="veiculo.id_veiculo" :value="veiculo.id_veiculo">{{veiculo.modelo}}</option>
-                    </select>
-                </div>
-            </div>
-            <button type="submit" @click="marcar" class="btn button"><font-awesome-icon icon="fa-solid fa-check" />&nbsp;&nbsp;&nbsp;Marcar</button>
+            <h5>Imformações/Peças para comprar:</h5>
+            <p>{{servico.informacoes}}</p><br>
         </div>
     </div>
 </template>
@@ -61,7 +38,7 @@
         },
         methods: {
             async get(){
-                await axios.get("http://localhost:3000/servicos/" + this.$route.query.idServico).then(response => this.servico = response.data).catch(error => console.log(error))
+                await axios.get("http://localhost:3000/ordemservico/agendado/visualizar/" + this.$route.query.idServico).then(response => this.servico = response.data).catch(error => console.log(error))
                 await axios.get("http://localhost:3000/veiculos/cliente/" + this.$route.query.idConta).then(response => this.veiculos = response.data).catch(error => console.log(error))
             },
             async marcar(){

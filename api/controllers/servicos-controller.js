@@ -20,6 +20,11 @@ exports.getUmServicos = (req, res, next)=>{
             [req.params.id_servico],
             (error, resultado, fields) => {
                 if(error){return res.status(500).send({error: error})}
+                if(resultado.length == 0){
+                    return res.status(404).send({
+                        mensagem: 'Não foi encontrado o serviço'
+                    })
+                }
                 const response = {
                     id_servico: resultado[0].id_servico,
                     imagem: resultado[0].imagem,

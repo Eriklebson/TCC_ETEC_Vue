@@ -23,6 +23,11 @@ exports.getUmaConta = (req, res, next)=>{
             [req.params.id_conta],
             (error, resultado, fields) => {
                 if(error){return res.status(500).send({error: error})}
+                if(resultado.length == 0){
+                    return res.status(404).send({
+                        mensagem: 'Não foi encontrado a conta'
+                    })
+                }
                 const response = {
                     id_conta: resultado[0].id_conta,
                     tipo_conta: resultado[0].tipo_conta,

@@ -13,24 +13,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto me-5">
             <li class="nav-item ms-3 pt-3">
-              <router-link class="nav-link text-white" to="/">
-                <font-awesome-icon class="me-1" icon="fa-regular fa-user" />Atendimento
-              </router-link>
-            </li>
-
-            <li class="nav-item ms-3 pt-3">
-              <router-link class="nav-link text-white" to="/">
-                <font-awesome-icon icon="fa-regular fa-pen-to-square" /> Faça
-                seu orçamento
-              </router-link>
-            </li>
-
-            <li class="nav-item ms-3 pt-3">
               <router-link class="nav-link text-white" to="/login">
                 <font-awesome-icon class="me-2" icon="fa-solid fa-arrow-right-to-bracket" />Login
               </router-link>
             </li>
-
             <nav class="nav-item ms-3 pt-3">
               <router-link to="" class="nav-link">
                 <font-awesome-icon class="text-light" icon="fa-solid fa-bars" />

@@ -8,8 +8,7 @@
         <option value="1">One</option>
         <option value="2">Two</option>
         <option value="3">Three</option>
-      </select>
-      <font-awesome-icon class="btn reaload" icon="fa-solid fa-rotate" />
+      </select><br>
     </div>
   </div>
  
@@ -34,25 +33,9 @@
             <td v-if="(servicoAgendado.status == 4)"><font-awesome-icon class="text-success" icon="fa-solid fa-circle" />&nbsp;&nbsp;Pronto</td>
             <td>{{servicoAgendado.nome_servico}}</td>
             <td>(11) 9 9999-9999</td> 
-            <td><button type="button" class="btn border" @click="cancelar = !cancelar"><font-awesome-icon class="me-1" icon="fa-solid fa-circle-xmark" />Cancelar</button></td> 
-            <!--Modal -->
-            <div class="modal" tabindex="-1" v-show="cancelar">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title"></h5>
-                    <button  @click="cancelar = !cancelar" type="button" class="btn-close btn-close-white " data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body text-center">
-                    <p>Tem certeza que deseja cancelar o agendamento ?</p>
-                  </div>
-                  <div class="modal-footer d-flex justify-content-center">
-                    <button type="button" class="btn modal-btn me-3" data-bs-dismiss="modal">Sim</button>
-                    <button type="button" class="btn modal-btn"  @click="cancelar = !cancelar" >Não</button>
-                  </div>
-                </div>
-              </div>
-            </div>             
+            <td>
+              <router-link :to="{name: 'VisualizarServico', query:{idServico: servicoAgendado.id_ordem, idConta: this.$route.query.id}}" type="button" class="btn border"><font-awesome-icon icon="fa-solid fa-eye" />&nbsp;&nbsp;Visualizar</router-link>
+            </td> 
           </tr>
         </tbody>
       </table>
@@ -70,7 +53,6 @@ export default {
     data() {
       return {
         servicosAgendados: [],
-        cancelar: false,
       }
     },
     created(){

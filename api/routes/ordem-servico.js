@@ -8,6 +8,7 @@ router.get('/:id_ordem', ordemServicoController.getUmOrdemServico);
 router.get('/agendados/all', ordemServicoController.getServicos);
 router.get('/agendados/finalizados', ordemServicoController.getServicosFinalizados);
 router.get('/agendado/:id_conta', ordemServicoController.getClienteAgenda);
+router.get('/agendado/visualizar/:id_ordem', ordemServicoController.getServicoClienteView);
 router.get('/agendado/finalizados/:id_conta', ordemServicoController.getServicoFinalizado);
 router.post('/', ordemServicoController.postOrdemServico);
 router.patch('/:id_ordem', ordemServicoController.patchOrdemServico);

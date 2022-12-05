@@ -20,6 +20,11 @@ exports.getUmPecas = (req, res, next)=>{
             [req.params.id_servico],
             (error, resultado, fields) => {
                 if(error){return res.status(500).send({error: error})}
+                if(resultado.length == 0){
+                    return res.status(404).send({
+                        mensagem: 'Não foi encontrado a peça'
+                    })
+                }
                 const response = {
                     id_peca: resultado[0].id_peca,
                     marca: resultado[0].marca,

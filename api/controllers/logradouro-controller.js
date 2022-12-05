@@ -20,6 +20,11 @@ exports.getUmLogradouro = (req, res, next)=>{
             [req.params.cep],
             (error, resultado, fields) => {
                 if(error){return res.status(500).send({error: error})}
+                if(resultado.length == 0){
+                    return res.status(404).send({
+                        mensagem: 'Não foi encontrado o logradouro'
+                    })
+                }
                 const response = {
                     CEP: resultado[0].CEP,
                     id_logradouro: resultado[0].id_logradouro,

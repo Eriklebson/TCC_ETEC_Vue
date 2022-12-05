@@ -20,6 +20,11 @@ exports.getUmOrdemServico = (req, res, next)=>{
             [req.params.id_ordem],
             (error, resultado, fields) => {
                 if(error){return res.status(500).send({error: error})}
+                if(resultado.length == 0){
+                    return res.status(404).send({
+                        mensagem: 'Não foi encontrado a ordem de servico'
+                    })
+                }
                 const response = {
                     id_ordem: resultado[0].id_ordem,
                     data_abertura: resultado[0].data_abertura,
@@ -36,11 +41,40 @@ exports.getUmOrdemServico = (req, res, next)=>{
         )
     })
 };
+exports.getServicoClienteView = (req, res, next)=>{
+    mysql.getConnection((error, conn) => {
+        if(error){return res.status(500).send({error: error})}
+        conn.query(
+            `select * from ordem_servico right join servicos on ordem_servico.id_servico = servicos.id_servico right join conta_site on ordem_servico.id_conta = conta_site.id_conta where ordem_servico.status >= 5 and ordem_servico.id_ordem = ?;`,
+            [req.params.id_ordem],
+            (error, resultado, fields) => {
+                if(error){return res.status(500).send({error: error})}
+                const response = {
+                    id_ordem: resultado[0].id_ordem,
+                    data_abertura: resultado[0].data_abertura,
+                    previsao_entrega: resultado[0].previsao_entrega,
+                    files: resultado[0].files,
+                    status: resultado[0].status,
+                    informacoes: resultado[0].informacoes,
+                    id_veiculo: resultado[0].id_veiculo,
+                    id_servico: resultado[0].id_servico,
+                    id_conta: resultado[0].id_conta,
+                    imagem: resultado[0].imagem,
+                    nome_servico: resultado[0].nome_servico,
+                    descricao: resultado[0].descricao,
+                    valor: resultado[0].valor,
+                    email: resultado[0].email,
+                }
+                return res.status(200).send(response)
+            }
+        )
+    })
+};
 exports.getServicos = (req, res, next)=>{
     mysql.getConnection((error, conn) => {
         if(error){return res.status(500).send({error: error})}
         conn.query(
-            `select * from ordem_servico right join servicos on ordem_servico.id_servico = servicos.id_servico right join conta_site on ordem_servico.id_conta = conta_site.id_conta where ordem_servico.status != 5;`,
+            `select * from ordem_servico right join servicos on ordem_servico.id_servico = servicos.id_servico right join conta_site on ordem_servico.id_conta = conta_site.id_conta where ordem_servico.status < 5;`,
             (error, resultado, fields) => {
                 if(error){return res.status(500).send({error: error})}
                 return res.status(200).send(resultado)
@@ -52,7 +86,7 @@ exports.getServicosFinalizados = (req, res, next)=>{
     mysql.getConnection((error, conn) => {
         if(error){return res.status(500).send({error: error})}
         conn.query(
-            `select * from ordem_servico right join servicos on ordem_servico.id_servico = servicos.id_servico right join conta_site on ordem_servico.id_conta = conta_site.id_conta where ordem_servico.status = 5;`,
+            `select * from ordem_servico right join servicos on ordem_servico.id_servico = servicos.id_servico right join conta_site on ordem_servico.id_conta = conta_site.id_conta where ordem_servico.status >= 5;`,
             (error, resultado, fields) => {
                 if(error){return res.status(500).send({error: error})}
                 return res.status(200).send(resultado)
@@ -64,7 +98,7 @@ exports.getClienteAgenda = (req, res, next)=>{
     mysql.getConnection((error, conn) => {
         if(error){return res.status(500).send({error: error})}
         conn.query(
-            `select * from ordem_servico right join servicos on ordem_servico.id_servico = servicos.id_servico right join conta_site on ordem_servico.id_conta = conta_site.id_conta where conta_site.id_conta = ? and ordem_servico.status != 5;`,
+            `select * from ordem_servico right join servicos on ordem_servico.id_servico = servicos.id_servico right join conta_site on ordem_servico.id_conta = conta_site.id_conta where conta_site.id_conta = ? and ordem_servico.status < 5;`,
             [req.params.id_conta],
             (error, resultado, fields) => {
                 if(error){return res.status(500).send({error: error})}
@@ -77,7 +111,7 @@ exports.getServicoFinalizado = (req, res, next)=>{
     mysql.getConnection((error, conn) => {
         if(error){return res.status(500).send({error: error})}
         conn.query(
-            `select * from ordem_servico right join servicos on ordem_servico.id_servico = servicos.id_servico right join conta_site on ordem_servico.id_conta = conta_site.id_conta where conta_site.id_conta = ? and ordem_servico.status = 5;`,
+            `select * from ordem_servico right join servicos on ordem_servico.id_servico = servicos.id_servico right join conta_site on ordem_servico.id_conta = conta_site.id_conta where conta_site.id_conta = ? and ordem_servico.status >= 5`,
             [req.params.id_conta],
             (error, resultado, fields) => {
                 if(error){return res.status(500).send({error: error})}

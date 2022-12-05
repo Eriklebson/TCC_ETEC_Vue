@@ -17,6 +17,7 @@ import Historico from '../DashBoard/views/HistoricoView.vue';
 import Carros from '../DashBoard/views/CarrosView.vue';
 import ContratarServico from '../DashBoard/views/ContratarServicoView.vue';
 import AndamentoServico from '../DashBoard/views/EditAndamentoServView.vue';
+import VisualizarServico from '../DashBoard/views/VisualizarServView.vue';
 
 const routes = [
   {
@@ -111,6 +112,11 @@ const routes = [
         path: '/DashBoard/Carros',
         name: 'Carros',
         component: Carros,
+      },
+      {
+        path: '/DashBoard/VisualizarServico',
+        name: 'VisualizarServico',
+        component: VisualizarServico,
       },
     ]
   }

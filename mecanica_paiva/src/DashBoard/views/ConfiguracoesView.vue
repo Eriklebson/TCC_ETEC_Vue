@@ -111,7 +111,7 @@
             },
             async get(){
                 await axios.get("http://localhost:3000/contas/" + this.$route.query.id).then(response => this.usuario = response.data).catch(error => console.log(error)),
-                await axios.get("http://localhost:3000/endereco/cliente/" + this.$route.query.id).then(response => this.endereco = response.data).catch(error => console.log(error)),
+                await axios.get("http://localhost:3000/endereco/cliente/" + this.$route.query.id).then(response => this.endereco = response.data).catch(error => console.log(error))
                 this.nome = this.usuario.nome
                 this.email = this.usuario.email
                 this.cep = this.endereco.cep
@@ -123,6 +123,9 @@
                 this.cidade = this.endereco.cidade
                 this.bairro = this.endereco.bairro
                 this.uf = this.endereco.uf
+                if(this.endereco.cep != undefined){
+                    this.ativo = true
+                }
             },
             uploadimage(){
                 this.imagem = this.$refs.file.files[0];

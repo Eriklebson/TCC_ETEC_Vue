@@ -12,6 +12,7 @@
                 <option value="3">Aguardando peças</option>
                 <option value="4">Pronto</option>
                 <option value="5">Entregue</option>
+                <option value="6">Cancelado</option>
             </select><br>
             <h5>Serviço:</h5>
             <p>{{servico.nome_servico}}</p>

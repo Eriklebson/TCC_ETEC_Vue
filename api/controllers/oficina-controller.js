@@ -20,6 +20,11 @@ exports.getUmaOficina = (req, res, next)=>{
             [req.params.id_oficina],
             (error, resultado, fields) => {
                 if(error){return res.status(500).send({error: error})}
+                if(resultado.length == 0){
+                    return res.status(404).send({
+                        mensagem: 'Não foi encontrado a oficina'
+                    })
+                }
                 const response = {
                     id_oficina: resultado[0].id_oficina,
                     cnpj: resultado[0].cnpj,

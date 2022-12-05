@@ -5,7 +5,6 @@
             <router-link :to="{name: 'Servicos', query:{id: conta.id_conta}}"><li><font-awesome-icon icon="fa-solid fa-box" />&nbsp;&nbsp;&nbsp;Serviços</li></router-link>
             <router-link :to="{name: 'ServicosAbertos', query:{id: conta.id_conta}}"><li><font-awesome-icon icon="fa-solid fa-toolbox" />&nbsp;&nbsp;&nbsp;Servicos em Aberto</li></router-link>
             <router-link :to="{name: 'hisServicos', query:{id: conta.id_conta}}"><li><font-awesome-icon icon="fa-solid fa-clock-rotate-left" />&nbsp;&nbsp;&nbsp;Historico de Serviços</li></router-link>
-            <router-link :to="{name: 'Gerenciar', query:{id: conta.id_conta}}"><li><font-awesome-icon icon="fa-solid fa-house" />  &nbsp;&nbsp;&nbsp;Gerenciar</li></router-link>
             <router-link :to="{name: 'Configuracoes', query:{id: conta.id_conta}}"><li><font-awesome-icon icon="fa-solid fa-gear" />&nbsp;&nbsp;&nbsp;Configurações</li></router-link>
         </ul>
         <ul v-else>

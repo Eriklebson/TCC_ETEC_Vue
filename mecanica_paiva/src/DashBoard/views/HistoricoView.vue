@@ -8,8 +8,7 @@
         <option value="1">One</option>
         <option value="2">Two</option>
         <option value="3">Three</option>
-      </select>
-      <font-awesome-icon class="btn reaload" icon="fa-solid fa-rotate" />
+      </select><br>
     </div>
   </div>
 
@@ -31,6 +30,7 @@
             <td v-if="(servico.status == 3)"><font-awesome-icon class="text-warning" icon="fa-solid fa-circle" />&nbsp;&nbsp;Aguardando peças</td>
             <td v-if="(servico.status == 4)"><font-awesome-icon class="text-success" icon="fa-solid fa-circle" />&nbsp;&nbsp;Pronto</td>
             <td v-if="(servico.status == 5)"><font-awesome-icon class="text-success" icon="fa-solid fa-circle" />&nbsp;&nbsp;Finalizado</td>
+            <td v-if="(servico.status == 6)"><font-awesome-icon class="text-danger" icon="fa-solid fa-circle" />&nbsp;&nbsp;Cancelado</td>
             <td>{{servico.nome_servico}}</td>
           </tr>
           

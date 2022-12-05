@@ -20,6 +20,11 @@ exports.getUmEndereco = (req, res, next)=>{
             [req.params.id_endereco],
             (error, resultado, fields) => {
                 if(error){return res.status(500).send({error: error})}
+                if(resultado.length == 0){
+                    return res.status(404).send({
+                        mensagem: 'Não foi encontrado o endereco'
+                    })
+                }
                 const response = {
                     id_endereco: resultado[0].id_endereco,
                     cep: resultado[0].cep,
@@ -46,6 +51,12 @@ exports.getClienteEndereco = (req, res, next)=>{
             [req.params.id_conta],
             (error, resultado, fields) => {
                 if(error){return res.status(500).send({error: error})}
+                if(resultado.length == 0){
+                    return res.status(404).send({
+                        mensagem: 'Usuario não tem endereco cadastrado',
+                        status: false
+                    })
+                }
                 const response = {
                     id_endereco: resultado[0].id_endereco,
                     cep: resultado[0].cep,

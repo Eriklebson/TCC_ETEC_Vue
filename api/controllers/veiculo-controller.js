@@ -20,6 +20,11 @@ exports.getUmVeiculo = (req, res, next)=>{
             [req.params.id_veiculo],
             (error, resultado, fields) => {
                 if(error){return res.status(500).send({error: error})}
+                if(resultado.length == 0){
+                    return res.status(404).send({
+                        mensagem: 'Não foi encontrado o veiculo'
+                    })
+                }
                 const response = {
                     id_veiculo: resultado[0].id_veiculo,
                     placa: resultado[0].placa,
@@ -43,6 +48,11 @@ exports.getVeiculoCliente = (req, res, next)=>{
             [req.params.id_conta],
             (error, resultado, fields) => {
                 if(error){return res.status(500).send({error: error})}
+                if(resultado.length == 0){
+                    return res.status(404).send({
+                        mensagem: 'O cliente não tem carro cadastrado'
+                    })
+                }
                 return res.status(200).send(resultado)
             }
         )
