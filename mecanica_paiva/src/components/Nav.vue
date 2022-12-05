@@ -17,11 +17,6 @@
                 <font-awesome-icon class="me-2" icon="fa-solid fa-arrow-right-to-bracket" />Login
               </router-link>
             </li>
-            <nav class="nav-item ms-3 pt-3">
-              <router-link to="" class="nav-link">
-                <font-awesome-icon class="text-light" icon="fa-solid fa-bars" />
-              </router-link>
-            </nav>
           </ul>
         </div>
       </div>
