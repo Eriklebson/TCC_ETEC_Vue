@@ -11,7 +11,7 @@
                             <img src="../../../public/imagem/manutencao.png" alt="">
                         </div>
                         <div class="col-md-8">
-                            <h2>{{servico.nome}}</h2>
+                            <h2>{{servico.nome_servico}}</h2>
                         </div>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                             <div class="imagem">
                                 <img v-bind:src="link + servico.imagem" alt="">
                                 <div class="sobre text-center">
-                                    <h4>{{servico.nome}}</h4>
+                                    <h4>{{servico.nome_servico}}</h4>
                                     <hr>
                                     <p class="block-with-text">{{servico.descricao}}</p>
                                     <button type="button" class="btn btn-blacktransparent">Contratar</button>

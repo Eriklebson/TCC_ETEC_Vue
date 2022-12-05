@@ -9,7 +9,7 @@
             <router-link :to="{name: 'Configuracoes', query:{id: conta.id_conta}}"><li><font-awesome-icon icon="fa-solid fa-gear" />&nbsp;&nbsp;&nbsp;Configurações</li></router-link>
         </ul>
         <ul v-else>
-            <router-link :to="{name: 'Conta', query:{id: conta.id_conta}}"><li><font-awesome-icon icon="fa-solid fa-house" />&nbsp;&nbsp;&nbsp;Conta</li></router-link>
+            <router-link :to="{name: 'Shop', query:{id: conta.id_conta}}"><li><font-awesome-icon icon="fa-solid fa-cart-shopping" />&nbsp;&nbsp;&nbsp;Serviços</li></router-link>
             <router-link :to="{name: 'Agenda', query:{id: conta.id_conta}}"><li><font-awesome-icon icon="fa-solid fa-box" />&nbsp;&nbsp;&nbsp;Agenda</li></router-link>
             <router-link :to="{name: 'Historico', query:{id: conta.id_conta}}"><li><font-awesome-icon icon="fa-solid fa-clock-rotate-left" />&nbsp;&nbsp;&nbsp;Histórico</li></router-link>
             <router-link :to="{name: 'Carros', query:{id: conta.id_conta}}"><li><font-awesome-icon icon="fa-solid fa-car" />&nbsp;&nbsp;&nbsp;Meus carros</li></router-link>

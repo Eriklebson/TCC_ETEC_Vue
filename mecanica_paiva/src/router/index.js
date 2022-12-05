@@ -11,10 +11,12 @@ import hisServicos from '../DashBoard/views/HisServicosView.vue';
 import ServicosAbertos from '../DashBoard/views/ServicosAbertosView.vue';
 import Gerenciar from '../DashBoard/views/GerenciarView.vue';
 import Configuracoes from '../DashBoard/views/ConfiguracoesView.vue';
-import Conta from '../DashBoard/views/ContaView.vue';
+import Shop from '../DashBoard/views/ShopView.vue';
 import Agenda from '../DashBoard/views/AgendaView.vue';
 import Historico from '../DashBoard/views/HistoricoView.vue';
 import Carros from '../DashBoard/views/CarrosView.vue';
+import ContratarServico from '../DashBoard/views/ContratarServicoView.vue';
+import AndamentoServico from '../DashBoard/views/EditAndamentoServView.vue';
 
 const routes = [
   {
@@ -71,6 +73,11 @@ const routes = [
         component: ServicosAbertos,
       },
       {
+        path: '/DashBoard/AndamentoServico',
+        name: 'AndamentoServico',
+        component: AndamentoServico,
+      },
+      {
         path: '/DashBoard/Gerenciar',
         name: 'Gerenciar',
         component: Gerenciar,
@@ -81,9 +88,14 @@ const routes = [
         component: Configuracoes,
       },
       {
-        path: '/DashBoard/Conta',
-        name: 'Conta',
-        component: Conta,
+        path: '/DashBoard/Shop',
+        name: 'Shop',
+        component: Shop,
+      },
+      {
+        path: '/DashBoard/ContratarServico',
+        name: 'ContratarServico',
+        component: ContratarServico,
       },
       {
         path: '/DashBoard/Agenda',

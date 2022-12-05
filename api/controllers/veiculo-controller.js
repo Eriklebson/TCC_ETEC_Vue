@@ -17,7 +17,7 @@ exports.getUmVeiculo = (req, res, next)=>{
         if(error){return res.status(500).send({error: error})}
         conn.query(
             'select * from veiculo where id_veiculo = ?;',
-            [req.params.id_teste],
+            [req.params.id_veiculo],
             (error, resultado, fields) => {
                 if(error){return res.status(500).send({error: error})}
                 const response = {
@@ -29,10 +29,21 @@ exports.getUmVeiculo = (req, res, next)=>{
                     ano: resultado[0].ano,
                     cor: resultado[0].cor,
                     id_dono: resultado[0].id_dono,
-                    id_peca: resultado[0].id_peca,
-                    id_status: resultado[0].id_status,
                 }
                 return res.status(200).send(response)
+            }
+        )
+    })
+};
+exports.getVeiculoCliente = (req, res, next)=>{
+    mysql.getConnection((error, conn) => {
+        if(error){return res.status(500).send({error: error})}
+        conn.query(
+            'select * from veiculo where id_conta = ?;',
+            [req.params.id_conta],
+            (error, resultado, fields) => {
+                if(error){return res.status(500).send({error: error})}
+                return res.status(200).send(resultado)
             }
         )
     })
@@ -41,8 +52,8 @@ exports.postVeiculo = (req, res, next)=>{
     mysql.getConnection((error, conn) => {
         if(error){return res.status(500).send({error: error})}
         conn.query(
-            `insert into veiculo (placa, marca, modelo, potencia, ano, cor, id_dono, id_peca, id_status) values (?, ?, ?, ?, ?, ?, ?, ?, ?);`,
-            [req.body.placa ,req.body.marca, req.body.modelo, req.body.potencia, req.body.ano ,req.body.cor, req.body.id_dono, req.body.id_peca, req.body.id_status],
+            `insert into veiculo (placa, marca, modelo, potencia, ano, cor, id_conta) values (?, ?, ?, ?, ?, ?, ?);`,
+            [req.body.placa ,req.body.marca, req.body.modelo, req.body.potencia, req.body.ano ,req.body.cor, req.body.id_conta],
             (error, resultado, fields) => {
                 if(error){return res.status(500).send({error: error})}
                 res.status(201).send({

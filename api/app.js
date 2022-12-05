@@ -11,6 +11,8 @@ const rotaOrdemServico = require('./routes/ordem-servico');
 const rotaPecas = require('./routes/pecas');
 const rotaTestePecas = require('./routes/teste-pecas');
 const rotaVeiculos = require ('./routes/veiculos');
+const rotaLogradouro = require ('./routes/logradouro');
+const rotaEndereco = require ('./routes/endereco');
 
 app.use(morgan('dev'));
 app.use('/img', express.static('img'));
@@ -37,6 +39,8 @@ app.use('/ordemservico', rotaOrdemServico);
 app.use('/pecas', rotaPecas);
 app.use('/testepecas', rotaTestePecas);
 app.use('/veiculos', rotaVeiculos);
+app.use('/logradouro', rotaLogradouro);
+app.use('/endereco', rotaEndereco);
 
 app.use((req, res, next) =>{
     const erro = new Error('Não encontrado');

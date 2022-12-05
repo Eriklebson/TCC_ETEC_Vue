@@ -23,9 +23,9 @@ exports.getUmServicos = (req, res, next)=>{
                 const response = {
                     id_servico: resultado[0].id_servico,
                     imagem: resultado[0].imagem,
-                    tipo: resultado[0].nome,
+                    nome_servico: resultado[0].nome_servico,
                     descricao: resultado[0].descricao,
-                    valor: resultado[0].descricao,
+                    valor: resultado[0].valor,
                 }
                 return res.status(200).send(response)
             }
@@ -36,7 +36,7 @@ exports.postServicos = (req, res, next)=>{
     mysql.getConnection((error, conn) => {
         if(error){return res.status(500).send({error: error})}
         conn.query(
-            `insert into servicos(imagem, nome, valor, descricao) values (?, ?, ?, ?);`,
+            `insert into servicos(imagem, nome_servico, valor, descricao) values (?, ?, ?, ?);`,
             [req.file.filename, req.body.nome ,req.body.valor, req.body.descricao],
             (error, resultado, fields) => {
                 if(error){return res.status(500).send({error: error})}

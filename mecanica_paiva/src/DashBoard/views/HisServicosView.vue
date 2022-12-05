@@ -17,44 +17,30 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 text-end">
-                <button type="button" class="btn refrash"><font-awesome-icon icon="fa-solid fa-trash" />&nbsp;&nbsp;&nbsp;Excluir</button>
-            </div>
         </div>
         <div class="card" >
             <form action="">
                 <table class="table">
                     <thead class="table-light">
                         <tr>
-                            <th scope="col"><input @click="selectAll" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input"></th>
                             <th scope="col">Data de serviço</th>
                             <th scope="col">Cliente</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Serviço</th>
                             <th scope="col">Telefone</th>
-                            <th scope="col">Ações</th>
                         </tr>
                     </thead>
                     <tbody class="table-group-divider">
-                        <tr class="itens" @click="itens = !itens">
-                            <th scope="row"><input :checked="select" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input"></th>
-                            <td>24/10/2021</td>
-                            <td>Julia Alencar</td>
-                            <td>X XXXX-XXXX</td>
-                            <td><button type="button" class="btn refrash"><font-awesome-icon icon="fa-solid fa-trash" /></button></td>
-                        </tr>
-                        <tr v-show="itens">
-                            <td colspan="5">
-                                <h5>Detalhes</h5><br>
-                                <p>Nome: Julia Alencar</p>
-                                <p>E-mail: julia123@teste.com</p>
-                                <p>X XXXX-XXXX</p>
-                                <p>Data de Nascimento: 11/11/2000</p>
-                                <p>Endereço: etec jardim angela</p>
-                                <p>Número: 11</p>
-                                <h5>Situação</h5>
-                                <p>Data: 11/11/2022</p>
-                                <p>Horário: 15:40</p>
-                                <p>Serviço: Troca de óleo</p>
-                            </td>
+                        <tr class="itens" v-for="servico in servicos" :key="servico.id_ordem">
+                            <td>{{moment(String(servico.data_abertura)).format('MM/DD/YYYY HH:mm')}}</td>
+                            <td>{{servico.nome}}</td>
+                            <td v-if="(servico.status == 1)"><font-awesome-icon class="text-secondary" icon="fa-solid fa-circle" />&nbsp;&nbsp;Aguardando a data</td>
+                            <td v-if="(servico.status == 2)"><font-awesome-icon class="text-info" icon="fa-solid fa-circle" />&nbsp;&nbsp;Em trabalho</td>
+                            <td v-if="(servico.status == 3)"><font-awesome-icon class="text-warning" icon="fa-solid fa-circle" />&nbsp;&nbsp;Aguardando peças</td>
+                            <td v-if="(servico.status == 4)"><font-awesome-icon class="text-success" icon="fa-solid fa-circle" />&nbsp;&nbsp;Pronto</td>
+                            <td v-if="(servico.status == 5)"><font-awesome-icon class="text-success" icon="fa-solid fa-circle" />&nbsp;&nbsp;Finalizado</td>
+                            <td>{{servico.nome_servico}}</td>
+                            <td>{{servico.telefone}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -64,22 +50,23 @@
 </template>
 
 <script>
+    import moment from 'moment';
+    import axios from "axios";
     export default{
         name: 'Emails',
         data(){
             return{
-                itens: false,
-                select: false,
+                servicos: [],
             }
         },
+        created(){
+            this.moment = moment;
+            this.get();
+            console.log()
+        },
         methods:{
-            selectAll(){
-                if(this.select == true){
-                    this.select = false
-                }
-                else {
-                    this.select = true
-                }
+            async get(){
+                await axios.get("http://localhost:3000/ordemservico/agendados/finalizados").then(response => this.servicos = response.data).catch(error => console.log(error))
             }
         }
     }

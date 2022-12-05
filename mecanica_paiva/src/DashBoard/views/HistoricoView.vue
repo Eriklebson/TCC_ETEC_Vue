@@ -11,15 +11,6 @@
       </select>
       <font-awesome-icon class="btn reaload" icon="fa-solid fa-rotate" />
     </div>
-
-    <div class="col-md-6 botoes">
-      <button class="btn border border ms-5" @click="excluir = !excluir">
-        <font-awesome-icon
-          class="me-1"
-          icon="fa-solid fa-circle-xmark"
-        />Excluir
-      </button>
-    </div>
   </div>
 
   <div class="card">
@@ -27,97 +18,49 @@
       <table class="table">
         <thead class="table-light">
           <tr>
-            <th scope="col">
-              <input
-                @click="selectAll"
-                class="form-check-input mt-0"
-                type="checkbox"
-                value=""
-                aria-label="Checkbox for following text input"
-              />
-            </th>
             <th scope="col">Data</th>
-            <th scope="col">Resultado</th>
+            <th scope="col">Status</th>
             <th scope="col">Serviço</th>
-            <th scope="col">Funcionário</th>
           </tr>
         </thead>
         <tbody class="table-group-divider">
-          <tr class="itens" @click="itens = !itens">
-            <th scope="row">
-              <input
-                :checked="select"
-                class="form-check-input mt-0"
-                type="checkbox"
-                value=""
-                aria-label="Checkbox for following text input"
-              />
-            </th>
-            <td>23/10/2022, 11:56:23</td>
-            <td>
-              <font-awesome-icon
-                class="text-success"
-                icon="fa-solid fa-circle"
-              />Exito
-            </td>
-            <td>Troca de óleo</td>
-            <td>(11) 9 9999-9999</td>
-            <td><font-awesome-icon class="btn" icon="fa-solid fa-trash" /></td>
+          <tr class="itens" v-for="servico in servicos" :key="servico.id_ordem">
+            <td>{{moment(String(servico.data_abertura)).format('MM/DD/YYYY HH:mm')}}</td>
+            <td v-if="(servico.status == 1)"><font-awesome-icon class="text-secondary" icon="fa-solid fa-circle" />&nbsp;&nbsp;Aguardando a data</td>
+            <td v-if="(servico.status == 2)"><font-awesome-icon class="text-info" icon="fa-solid fa-circle" />&nbsp;&nbsp;Em trabalho</td>
+            <td v-if="(servico.status == 3)"><font-awesome-icon class="text-warning" icon="fa-solid fa-circle" />&nbsp;&nbsp;Aguardando peças</td>
+            <td v-if="(servico.status == 4)"><font-awesome-icon class="text-success" icon="fa-solid fa-circle" />&nbsp;&nbsp;Pronto</td>
+            <td v-if="(servico.status == 5)"><font-awesome-icon class="text-success" icon="fa-solid fa-circle" />&nbsp;&nbsp;Finalizado</td>
+            <td>{{servico.nome_servico}}</td>
           </tr>
           
         </tbody>
       </table>
     </form>
   </div>
-
-  <!--Modal -->
-  <div class="modal" tabindex="-1" v-show="excluir">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title"></h5>
-          <button
-            @click="excluir = !excluir"
-            type="button"
-            class="btn-close btn-close-white"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div class="modal-body text-center">
-          <p>Tem certeza que deseja cancelar o agendamento ?</p>
-        </div>
-        <div class="modal-footer d-flex justify-content-center">
-          <button
-            type="button"
-            class="btn modal-btn me-3"
-            data-bs-dismiss="modal"
-          >
-            Sim
-          </button>
-          <button
-            type="button"
-            class="btn modal-btn"
-            @click="excluir = !excluir"
-          >
-            Não
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
 </template>
 
 
 <script>
+import moment from 'moment';
+import axios from "axios";
 export default {
   name: "historico",
-  data() {
-    return {
-      exito: "exito",
-      excluir: false,
-    };
+  data(){
+    return{
+     servicos: [],
+    }
   },
+  created(){
+    this.moment = moment;
+    this.get();
+    console.log()
+  },
+  methods:{
+    async get(){
+      await axios.get("http://localhost:3000/ordemservico/agendado/finalizados/" + this.$route.query.id).then(response => this.servicos = response.data).catch(error => console.log(error))
+    }
+  }
 };
 </script>
 
