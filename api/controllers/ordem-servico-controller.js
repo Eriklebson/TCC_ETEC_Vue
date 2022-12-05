@@ -13,6 +13,7 @@ exports.getOrdemServico = (req, res, next)=>{
     })
 };
 exports.getUmOrdemServico = (req, res, next)=>{
+    console.log(req.params.id_ordem),
     mysql.getConnection((error, conn) => {
         if(error){return res.status(500).send({error: error})}
         conn.query(
@@ -45,7 +46,7 @@ exports.getServicoClienteView = (req, res, next)=>{
     mysql.getConnection((error, conn) => {
         if(error){return res.status(500).send({error: error})}
         conn.query(
-            `select * from ordem_servico right join servicos on ordem_servico.id_servico = servicos.id_servico right join conta_site on ordem_servico.id_conta = conta_site.id_conta where ordem_servico.status >= 5 and ordem_servico.id_ordem = ?;`,
+            `select * from ordem_servico right join servicos on ordem_servico.id_servico = servicos.id_servico right join conta_site on ordem_servico.id_conta = conta_site.id_conta where ordem_servico.status <= 5 and ordem_servico.id_ordem = ?;`,
             [req.params.id_ordem],
             (error, resultado, fields) => {
                 if(error){return res.status(500).send({error: error})}
