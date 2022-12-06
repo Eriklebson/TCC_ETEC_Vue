@@ -74,3 +74,19 @@ exports.postVeiculo = (req, res, next)=>{
         )
     })
 };
+exports.deleteVeiculo = (req, res, next)=>{
+    mysql.getConnection((error, conn) => {
+        if(error){return res.status(500).send({error: error})}
+        conn.query(
+            `delete from veiculo where id_veiculo = ?;`,
+            [req.params.id_veiculo],
+            (error, resultado, fields) => {
+                if(error){return res.status(500).send({error: error})}
+                res.status(201).send({
+                    mensagem: 'Serviço Deletado',
+                    id_conta: resultado.insertId,
+                })
+            }
+        )
+    })
+};

@@ -7,6 +7,7 @@ router.get('/', veiculoController.getVeiculo);
 router.get('/:id_veiculo', veiculoController.getUmVeiculo);
 router.get('/cliente/:id_conta', veiculoController.getVeiculoCliente);
 router.post('/', veiculoController.postVeiculo);
+router.delete('/:id_veiculo', veiculoController.deleteVeiculo);
 
 
 module.exports = router;

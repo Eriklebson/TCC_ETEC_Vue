@@ -1,17 +1,6 @@
 <template>
   <h1>Histórico</h1>
-
-  <div class="row">
-    <div class="col-md-6">
-      <select class="form-select" aria-label="Default select example">
-        <option selected>Todos os Serviços</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select><br>
-    </div>
-  </div>
-
+  <br>
   <div class="card">
     <form action="">
       <table class="table">

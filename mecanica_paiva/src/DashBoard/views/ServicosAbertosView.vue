@@ -1,22 +1,7 @@
 <template>
     <div>
         <h1>Serviços em andamento</h1><br>
-        <div class="row justify-content-between">
-            <div class="col-md-3">
-                <div class="row">
-                    <div class="col-md-9">
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected>Todos os serviços</option>
-                            <option value="1">Mais recentes</option>
-                            <option value="2">Mais antigos</option>
-                        </select>
-                    </div>
-                    <div class="col-md-3">
-                        <button type="button" class="btn refrash"><font-awesome-icon icon="fa-solid fa-rotate-right" /></button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <br>
         <div class="card" >
             <form action="">
                 <table class="table">

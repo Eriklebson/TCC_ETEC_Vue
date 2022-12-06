@@ -5,8 +5,6 @@
     <div class="">
       <button @click="cadastrar = !cadastrar" class="btn border border me-2 adc-car"><font-awesome-icon
           icon="fa-solid fa-car" /> Adicionar carro</button>
-      <button class="btn btn-danger border border"><font-awesome-icon icon="fa-solid fa-car" class="me-1" />Remover
-        carro</button>
     </div>
   </div>
 
@@ -20,6 +18,7 @@
             <th scope="col">Placa</th>
             <th scope="col">Ano</th>
             <th scope="col">Potência</th>
+            <th scope="col">Ações</th>
           </tr>
         </thead>
         <tbody class="table-group-divider">
@@ -29,6 +28,7 @@
             <td>{{veiculo.placa}}</td>
             <td>{{veiculo.ano}}</td>
             <td>{{veiculo.potencia}}</td>
+            <td><p type="submit" @click="excluir(veiculo.id_veiculo)" class="btn btn-danger border border"><font-awesome-icon icon="fa-solid fa-car" class="me-1" />Remover carro</p></td>
           </tr>
         </tbody>
       </table>
@@ -117,6 +117,10 @@ export default {
         id_status: null,
       })
       await axios.post("http://localhost:3000/veiculos", body, { headers }).then(response => this.conta = response.data).catch(error => console.log(error))
+    },
+    async excluir(id_veiculo){
+      await axios.delete("http://localhost:3000/veiculos/" + id_veiculo).then(response => this.delete = response.data).catch(error => console.log(error))
+      this.get();
     }
   }
 };
