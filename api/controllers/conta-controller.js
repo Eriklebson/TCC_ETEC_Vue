@@ -38,7 +38,6 @@ exports.getUmaConta = (req, res, next)=>{
                     nascimento: resultado[0].nascimento,
                     cpf: resultado[0].cpf,
                     telefone: resultado[0].telefone,
-                    id_status: resultado[0].id_status,
                 }
                 return res.status(200).send(response)
             }
@@ -49,7 +48,7 @@ exports.postConta = (req, res, next)=>{
     mysql.getConnection((error, conn) => {
         if(error){return res.status(500).send({error: error})}
         conn.query(
-            `insert into conta_site (tipo_conta, nome, email, senha, imagem, nascimento, cpf, telefone, id_status) values (?, ?, ?, ?, ?, ?, ?, ?, ?);`,
+            `insert into conta_site (tipo_conta, nome, email, senha, imagem, nascimento, cpf, telefone) values (?, ?, ?, ?, ?, ?, ?, ?);`,
             [req.body.tipo_conta, req.body.nome, req.body.email, md5(req.body.senha), req.body.imagem, req.body.nascimento, req.body.cpf, req.body.telefone, req.body.id_status],
             (error, resultado, fields) => {
                 if(error){return res.status(500).send({error: error})}
@@ -84,7 +83,6 @@ exports.postAutenticacao = (req, res, next)=>{
                     nascimento: results[0].nascimento,
                     cpf: results[0].cpf,
                     telefone: results[0].telefone,
-                    id_status: results[0].id_status,
                 })
             }
             else{
